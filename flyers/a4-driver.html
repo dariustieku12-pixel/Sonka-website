@@ -19,16 +19,16 @@
   .brand-sub { font-weight: 700; letter-spacing: 8px; font-size: 4.4mm; color: #fff; }
   .brand-tag { font-size: 2.6mm; color: rgba(255,255,255,.6); margin-top: 1mm; letter-spacing: 1px; }
 
-  /* Hero — split: rhino truck photo + earnings overlay */
-  .hero { height: 110mm; background: url('assets/vehicles/rhino_truck.jpg') center/cover no-repeat; position: relative; }
+  /* Hero — Ghanaian driver portrait with earnings overlay */
+  .hero { height: 110mm; background: url('assets/trade/driver-portrait.png') center/cover no-repeat; position: relative; }
   .hero::after {
-    content: ''; position: absolute; inset: 0;
-    background: linear-gradient(to bottom, rgba(13,24,38,.05), rgba(13,24,38,.55));
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 28mm;
+    background: linear-gradient(to bottom, rgba(13,24,38,.85), rgba(13,24,38,0));
   }
   .hero .overlay {
-    position: absolute; left: 0; right: 0; bottom: 6mm; padding: 0 12mm;
+    position: absolute; left: 0; right: 0; top: 4mm; padding: 0 12mm;
     color: #fff; z-index: 2;
-    display: flex; gap: 8mm; justify-content: center;
+    display: flex; gap: 5mm; justify-content: center;
   }
   .hero .stat { text-align: center; background: rgba(13,24,38,.7); padding: 3mm 5mm; border-radius: 2mm; border: 1px solid rgba(245,168,0,.4); }
   .hero .stat .v { font-family: 'Playfair Display', serif; font-weight: 900; font-size: 8mm; color: #F5A800; line-height: 1; }
@@ -115,7 +115,7 @@
       <div class="qr-label">Scan to join</div>
     </div>
     <div class="contact">
-      <div class="url">dariustieku12-pixel.github.io/Sonka-webapp</div>
+      <div class="url">https://dariustieku12-pixel.github.io/Sonka-webapp</div>
       <div class="nums">
         <div>
           <div class="num-label">WhatsApp / Call</div>
