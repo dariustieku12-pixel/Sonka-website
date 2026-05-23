@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>SONKA — A4 Fridges & Appliances (210×297mm)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  @page { size: A4 portrait; margin: 0; }
+  html, body { margin: 0; padding: 0; }
+  body { background: #d0d4dc; font-family: 'DM Sans', sans-serif; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+
+  .sheet { width: 210mm; height: 297mm; margin: 12mm auto; background: #1B2A4A; color: #fff; overflow: hidden; box-shadow: 0 4px 30px rgba(0,0,0,.25); display: flex; flex-direction: column; }
+  @media print { body { background: white; } .sheet { margin: 0; box-shadow: none; } }
+
+  .brand-bar { background: #1B2A4A; color: #fff; padding: 5mm 12mm 4mm; text-align: center; border-bottom: 1px solid rgba(255,255,255,.08); }
+  .brand-name { font-family: 'Playfair Display', serif; font-weight: 900; font-size: 12mm; letter-spacing: 5px; color: #F5A800; line-height: 1; }
+  .brand-rule { width: 60mm; height: 1mm; background: #F5A800; margin: 1.5mm auto 1.5mm; }
+  .brand-sub { font-weight: 700; letter-spacing: 8px; font-size: 4.4mm; color: #fff; }
+  .brand-tag { font-size: 2.6mm; color: rgba(255,255,255,.6); margin-top: 1mm; letter-spacing: 1px; }
+
+  .hero { height: 110mm; background: url('assets/trade/appliances.png') center/cover no-repeat; }
+
+  .headline { background: #F5A800; color: #1B2A4A; padding: 6mm 12mm 6mm; text-align: center; }
+  .category-tag { font-size: 3mm; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 2mm; color: #1B2A4A; }
+  .headline h1 { font-family: 'Playfair Display', serif; font-weight: 900; font-size: 14mm; line-height: 1; margin: 0; color: #1B2A4A; }
+  .items { margin-top: 3mm; font-size: 4mm; font-weight: 500; color: #1B2A4A; }
+
+  .vehicle-band { display: grid; grid-template-columns: 60mm 1fr; background: #1B2A4A; }
+  .vehicle-band .veh { background: #fff; padding: 5mm 4mm; display: flex; align-items: center; justify-content: center; }
+  .vehicle-band .veh img { width: 100%; max-height: 38mm; object-fit: contain; }
+  .vehicle-band .promise { padding: 6mm 12mm 6mm 8mm; color: #fff; display: flex; flex-direction: column; justify-content: center; }
+  .vehicle-band .promise .twi { font-style: italic; font-size: 3.6mm; color: rgba(255,255,255,.7); margin-bottom: 2mm; }
+  .vehicle-band .promise .pitch { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 7mm; color: #F5A800; line-height: 1.1; }
+
+  .cta { flex: 1; padding: 6mm 12mm 7mm; background: #0D1826; display: grid; grid-template-columns: 45mm 1fr; gap: 6mm; align-items: center; }
+  .qr-wrap { text-align: center; }
+  .qr-wrap img { width: 45mm; height: 45mm; background: #fff; padding: 1.5mm; border-radius: 2mm; }
+  .qr-label { font-size: 2.8mm; font-weight: 700; margin-top: 2mm; color: #F5A800; letter-spacing: 1px; text-transform: uppercase; }
+  .contact .url { font-size: 4.2mm; font-weight: 700; margin-bottom: 3mm; color: #fff; word-break: break-all; }
+  .contact .nums { display: flex; gap: 6mm; margin-bottom: 3mm; }
+  .contact .num-label { font-size: 2.2mm; color: rgba(255,255,255,.55); letter-spacing: 1px; text-transform: uppercase; }
+  .contact .num { font-size: 5.2mm; font-weight: 900; color: #F5A800; line-height: 1.1; }
+  .contact .stores { padding-top: 3mm; border-top: 1px dashed rgba(255,255,255,.2); font-size: 3.4mm; color: rgba(255,255,255,.8); line-height: 1.5; }
+  .contact .stores strong { color: #F5A800; }
+  .footer-mini { padding: 0 12mm 4mm; background: #0D1826; font-size: 2.4mm; color: rgba(255,255,255,.35); text-align: center; }
+
+  .toolbar { position: fixed; top: 0; left: 0; right: 0; background: #1B2A4A; color: #fff; padding: 8px 16px; display: flex; gap: 12px; align-items: center; z-index: 1000; font-size: 13px; }
+  .toolbar a, .toolbar button { background: #F5A800; color: #1B2A4A; padding: 6px 14px; border-radius: 6px; text-decoration: none; font-weight: 700; border: none; font-size: 13px; cursor: pointer; }
+  .toolbar .muted { color: rgba(255,255,255,.6); }
+  body { padding-top: 44px; }
+  @media print { .toolbar { display: none; } body { padding-top: 0; } }
+</style>
+</head>
+<body>
+<div class="toolbar">
+  <strong>SONKA · A4 Fridges & Appliances (210×297mm)</strong>
+  <span class="muted">Place at: electronics shops · appliance dealers · furniture stores · home stores</span>
+  <button onclick="window.print()">🖨 Print / Save PDF</button>
+  <a href="index.html">← All flyers</a>
+</div>
+
+<div class="sheet">
+  <div class="brand-bar">
+    <div class="brand-name">SONKA</div>
+    <div class="brand-rule"></div>
+    <div class="brand-sub">L O G I S T I C S</div>
+    <div class="brand-tag">Ghana's Cargo Marketplace</div>
+  </div>
+
+  <div class="hero"></div>
+
+  <div class="headline">
+    <div class="category-tag">Fridges &amp; Appliances</div>
+    <h1>We move it.</h1>
+    <div class="items">Fridges · TVs · Washers · Sofas · Beds · Wardrobes</div>
+  </div>
+
+  <div class="vehicle-band">
+    <div class="veh"><img src="assets/vehicles/kia_truck.png" alt="Kia Truck"></div>
+    <div class="promise">
+      <div class="twi">Efie nneɛma — yɛsoa wo de no kɔ fie.</div>
+      <div class="pitch">From the shop<br>to your house.</div>
+    </div>
+  </div>
+
+  <div class="cta">
+    <div class="qr-wrap">
+      <img src="assets/qr-webapp.png" alt="Scan to open SONKA">
+      <div class="qr-label">Scan to book</div>
+    </div>
+    <div class="contact">
+      <div class="url">dariustieku12-pixel.github.io/Sonka-webapp</div>
+      <div class="nums">
+        <div>
+          <div class="num-label">WhatsApp / Call</div>
+          <div class="num">0538 214 744</div>
+        </div>
+        <div>
+          <div class="num-label">WhatsApp / Call</div>
+          <div class="num">0545 989 494</div>
+        </div>
+      </div>
+      <div class="stores">
+        <strong>🌴 PalmStore</strong> · <strong>🟥 Huawei AppGallery</strong> · <strong>⬇ APKPure</strong>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-mini">© 2026 Tele-Port Prime Ghana Ltd · Accra</div>
+</div>
+</body>
+</html>
