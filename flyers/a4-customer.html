@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>SONKA — A4 Customer Wall Poster (210×297mm)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  /* ── Page lock ────────────────────────────────────────────────── */
+  @page { size: A4 portrait; margin: 0; }
+  html, body { margin: 0; padding: 0; }
+  body { background: #d0d4dc; font-family: 'DM Sans', sans-serif; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+
+  /* On-screen scale; @page handles real print sizing */
+  .sheet {
+    width: 210mm; height: 297mm;
+    margin: 12mm auto;
+    background: #1B2A4A;
+    color: #fff;
+    overflow: hidden;
+    box-shadow: 0 4px 30px rgba(0,0,0,.25);
+    display: flex; flex-direction: column;
+    position: relative;
+  }
+  @media print {
+    body { background: white; }
+    .sheet { margin: 0; box-shadow: none; }
+  }
+
+  /* ── Top brand bar ────────────────────────────────────────────── */
+  .top {
+    padding: 8mm 12mm 4mm;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .logo { font-family: 'Playfair Display', serif; font-weight: 900; font-size: 11mm; letter-spacing: 4px; color: #F5A800; }
+  .tagline { font-size: 3.4mm; color: rgba(255,255,255,.65); letter-spacing: 1.2px; text-transform: uppercase; }
+
+  /* ── Hero ─────────────────────────────────────────────────────── */
+  .hero {
+    padding: 4mm 12mm 6mm;
+    border-bottom: 1px solid rgba(255,255,255,.1);
+  }
+  .badge {
+    display: inline-block; padding: 1.4mm 3mm;
+    background: rgba(245,168,0,.16); color: #F5A800;
+    border: 1px solid rgba(245,168,0,.4);
+    border-radius: 20mm; font-size: 3mm; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 2px;
+    margin-bottom: 5mm;
+  }
+  h1 {
+    font-family: 'Playfair Display', serif; font-weight: 900;
+    font-size: 22mm; line-height: .98; margin: 0;
+    color: #fff;
+  }
+  h1 span { color: #F5A800; }
+  .twi {
+    margin-top: 4mm; font-size: 4mm;
+    color: rgba(255,255,255,.65); font-style: italic;
+  }
+  .sub {
+    margin-top: 4mm; font-size: 4.6mm; line-height: 1.45;
+    color: rgba(255,255,255,.85); max-width: 165mm;
+  }
+
+  /* ── How it works ─────────────────────────────────────────────── */
+  .how {
+    padding: 5mm 12mm;
+    background: #0D1826;
+  }
+  .section-tag {
+    font-size: 2.8mm; font-weight: 700; letter-spacing: 1.5px;
+    color: #F5A800; text-transform: uppercase; margin-bottom: 2mm;
+  }
+  .how-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 4mm;
+    margin-top: 4mm;
+  }
+  .step { }
+  .step-num {
+    font-family: 'Playfair Display', serif; font-size: 12mm;
+    color: #F5A800; line-height: 1; margin-bottom: 1mm;
+  }
+  .step-t { font-weight: 700; font-size: 3.8mm; margin-bottom: 1mm; }
+  .step-d { font-size: 3.2mm; color: rgba(255,255,255,.65); line-height: 1.35; }
+
+  /* ── Vehicles ─────────────────────────────────────────────────── */
+  .vehicles {
+    padding: 5mm 12mm 6mm;
+    background: #fff; color: #1B2A4A;
+  }
+  .veh-grid {
+    display: grid; grid-template-columns: repeat(6, 1fr); gap: 3mm;
+    margin-top: 3mm;
+  }
+  .veh {
+    text-align: center;
+  }
+  .veh img {
+    width: 100%; height: 18mm; object-fit: cover; border-radius: 2mm;
+    background: #f0f0f0;
+  }
+  .veh-name { font-size: 2.6mm; font-weight: 700; margin-top: 1.4mm; }
+
+  /* ── Testimonial ──────────────────────────────────────────────── */
+  .quote {
+    padding: 5mm 12mm; background: #F5A800; color: #1B2A4A;
+    text-align: center;
+  }
+  .quote p {
+    font-family: 'Playfair Display', serif; font-weight: 700;
+    font-size: 5.5mm; margin: 0 0 1.5mm; line-height: 1.25;
+  }
+  .quote cite {
+    font-style: normal; font-size: 3mm; font-weight: 700; letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  /* ── Footer / CTA strip ───────────────────────────────────────── */
+  .cta {
+    flex: 1; padding: 6mm 12mm 8mm;
+    display: grid; grid-template-columns: 50mm 1fr; gap: 8mm;
+    align-items: start;
+  }
+  .qr-wrap { text-align: center; }
+  .qr-wrap img {
+    width: 50mm; height: 50mm; display: block;
+    background: #fff; padding: 2mm; border-radius: 2mm;
+  }
+  .qr-label {
+    font-size: 3.2mm; font-weight: 700; margin-top: 2mm;
+    color: #F5A800; letter-spacing: 1px; text-transform: uppercase;
+  }
+  .contact h3 {
+    font-family: 'Playfair Display', serif; font-size: 6mm; margin: 0 0 2mm; color: #F5A800;
+  }
+  .contact .url { font-size: 4.2mm; font-weight: 700; margin-bottom: 4mm; word-break: break-all; }
+  .row { display: flex; gap: 4mm; font-size: 3.8mm; margin-bottom: 1.4mm; }
+  .row .lbl { color: rgba(255,255,255,.55); width: 28mm; }
+  .row .val { font-weight: 700; }
+  .stores {
+    margin-top: 4mm; padding-top: 3mm;
+    border-top: 1px dashed rgba(255,255,255,.2);
+    font-size: 3.4mm; line-height: 1.5;
+  }
+  .stores strong { color: #F5A800; }
+
+  .copyright {
+    padding: 0 12mm 5mm;
+    font-size: 2.6mm; color: rgba(255,255,255,.4); text-align: center;
+  }
+
+  /* ── Screen-only controls ─────────────────────────────────────── */
+  .toolbar {
+    position: fixed; top: 0; left: 0; right: 0;
+    background: #1B2A4A; color: #fff; padding: 8px 16px;
+    display: flex; gap: 12px; align-items: center; z-index: 1000;
+    font-size: 13px;
+  }
+  .toolbar a, .toolbar button {
+    background: #F5A800; color: #1B2A4A; padding: 6px 14px;
+    border-radius: 6px; text-decoration: none; font-weight: 700;
+    border: none; font-size: 13px; cursor: pointer;
+  }
+  .toolbar .muted { color: rgba(255,255,255,.6); }
+  body { padding-top: 44px; }
+  @media print { .toolbar { display: none; } body { padding-top: 0; } }
+</style>
+</head>
+<body>
+<div class="toolbar">
+  <strong>SONKA · A4 Customer Wall Poster (210×297mm)</strong>
+  <span class="muted">Chrome → Print → Save as PDF or print directly</span>
+  <button onclick="window.print()">🖨 Print / Save PDF</button>
+  <a href="index.html">← All flyers</a>
+</div>
+
+<div class="sheet">
+  <!-- Top brand bar -->
+  <div class="top">
+    <div class="logo">SONKA</div>
+    <div class="tagline">🇬🇭 Ghana's Cargo Marketplace</div>
+  </div>
+
+  <!-- Hero -->
+  <div class="hero">
+    <span class="badge">Move anything in Ghana</span>
+    <h1>Find a driver<br><span>near you.</span></h1>
+    <div class="twi">Akwaaba — tu wo nneɛma. Akukurudu, kia ne aboboyaa.</div>
+    <p class="sub">
+      Trucks, aboboyaa and cargo bikes on a live map. Book in seconds.
+      Pay the driver directly by cash or MoMo — SONKA takes no commission.
+    </p>
+  </div>
+
+  <!-- How it works -->
+  <div class="how">
+    <div class="section-tag">Four simple steps</div>
+    <div class="how-grid">
+      <div class="step"><div class="step-num">1</div><div class="step-t">Open the map</div><div class="step-d">See drivers near you in real time.</div></div>
+      <div class="step"><div class="step-num">2</div><div class="step-t">Pick a driver</div><div class="step-d">Check vehicle, rating and distance.</div></div>
+      <div class="step"><div class="step-num">3</div><div class="step-t">Book &amp; agree price</div><div class="step-d">Send a request — driver gets notified.</div></div>
+      <div class="step"><div class="step-num">4</div><div class="step-t">Track to delivery</div><div class="step-d">Watch the trip live. Rate after.</div></div>
+    </div>
+  </div>
+
+  <!-- Vehicles -->
+  <div class="vehicles">
+    <div class="section-tag" style="color:#1B2A4A;">Every size of cargo</div>
+    <div class="veh-grid">
+      <div class="veh"><img src="assets/vehicles/rhino_truck.jpg" alt=""><div class="veh-name">Rhino Truck</div></div>
+      <div class="veh"><img src="assets/vehicles/kia_truck.png" alt=""><div class="veh-name">Kia Truck</div></div>
+      <div class="veh"><img src="assets/vehicles/trailer.jpg" alt=""><div class="veh-name">Trailer</div></div>
+      <div class="veh"><img src="assets/vehicles/mini_bus.webp" alt=""><div class="veh-name">Light Vehicle</div></div>
+      <div class="veh"><img src="assets/vehicles/aboboyaa.jpg" alt=""><div class="veh-name">Aboboyaa</div></div>
+      <div class="veh"><img src="assets/vehicles/motorcargo.jpg" alt=""><div class="veh-name">Two Tyres</div></div>
+    </div>
+  </div>
+
+  <!-- Testimonial -->
+  <div class="quote">
+    <p>"Found a truck in 10 minutes. Price was fair."</p>
+    <cite>— Abena M., shop owner · Kumasi</cite>
+  </div>
+
+  <!-- CTA strip -->
+  <div class="cta">
+    <div class="qr-wrap">
+      <img src="assets/qr-webapp.png" alt="Scan to open SONKA">
+      <div class="qr-label">Scan to start</div>
+    </div>
+    <div class="contact">
+      <h3>Move something today</h3>
+      <div class="url">dariustieku12-pixel.github.io/Sonka-webapp</div>
+      <div class="row"><span class="lbl">WhatsApp / Call</span><span class="val">0538 214 744</span></div>
+      <div class="row"><span class="lbl">WhatsApp / Call</span><span class="val">0545 989 494</span></div>
+      <div class="stores">
+        Install the SONKA app:
+        <br><strong>🌴 PalmStore</strong> · <strong>🟥 Huawei AppGallery</strong> · <strong>⬇ APKPure</strong>
+      </div>
+    </div>
+  </div>
+
+  <div class="copyright">© 2026 Tele-Port Prime Ghana Ltd · Accra, Ghana</div>
+</div>
+</body>
+</html>

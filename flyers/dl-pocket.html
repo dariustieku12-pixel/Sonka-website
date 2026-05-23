@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>SONKA — DL Pocket Strip (3 per A4 landscape) — Driver edition</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  @page { size: A4 landscape; margin: 0; }
+  html, body { margin: 0; padding: 0; }
+  body { background: #d0d4dc; font-family: 'DM Sans', sans-serif; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+
+  .sheet {
+    width: 297mm; height: 210mm; margin: 12mm auto;
+    display: grid; grid-template-columns: 99mm 99mm 99mm;
+    background: #fff;
+    box-shadow: 0 4px 30px rgba(0,0,0,.25);
+  }
+  @media print { body { background: white; } .sheet { margin: 0; box-shadow: none; } }
+
+  /* Each cell is one DL strip (99×210mm) */
+  .strip {
+    background: #1B2A4A; color: #fff;
+    display: flex; flex-direction: column;
+    border: 1px dashed rgba(0,0,0,.2);
+    overflow: hidden;
+  }
+  .strip:nth-child(1), .strip:nth-child(2) { border-right-style: dashed; }
+
+  .head {
+    padding: 6mm 7mm 4mm;
+    text-align: center; border-bottom: 1px solid rgba(255,255,255,.1);
+  }
+  .head .logo { font-family: 'Playfair Display', serif; font-weight: 900; font-size: 8mm; letter-spacing: 3px; color: #F5A800; }
+  .head .tag { font-size: 2.4mm; color: rgba(255,255,255,.65); letter-spacing: 1px; text-transform: uppercase; margin-top: 1mm; }
+
+  .pitch { padding: 5mm 7mm 3mm; }
+  .badge {
+    display: inline-block; padding: 1mm 2.5mm; background: rgba(245,168,0,.16); color: #F5A800;
+    border: 1px solid rgba(245,168,0,.4); border-radius: 20mm; font-size: 2.2mm; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 1.2px; margin-bottom: 2mm;
+  }
+  .pitch h2 {
+    font-family: 'Playfair Display', serif; font-weight: 900;
+    font-size: 9mm; line-height: 1; margin: 0; color: #fff;
+  }
+  .pitch h2 span { color: #F5A800; }
+  .pitch .twi { font-size: 2.6mm; color: rgba(255,255,255,.65); font-style: italic; margin-top: 1.5mm; }
+
+  .photo {
+    flex: 1; min-height: 0;
+    background-image: url('assets/vehicles/rhino_truck.jpg');
+    background-size: cover; background-position: center;
+    border-top: 3px solid #F5A800; border-bottom: 3px solid #F5A800;
+  }
+  .strip:nth-child(2) .photo { background-image: url('assets/vehicles/kia_truck.png'); background-color: #fff; background-size: contain; background-repeat: no-repeat; }
+  .strip:nth-child(3) .photo { background-image: url('assets/vehicles/aboboyaa.jpg'); }
+
+  .pricing {
+    padding: 4mm 7mm; background: #F5A800; color: #1B2A4A;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 4mm; text-align: center;
+  }
+  .pricing .p-amt { font-family: 'Playfair Display', serif; font-weight: 900; font-size: 8mm; line-height: 1; }
+  .pricing .p-amt small { font-size: 2.4mm; font-weight: 400; font-family: 'DM Sans', sans-serif; }
+  .pricing .p-lbl { font-size: 2.4mm; margin-top: 0.5mm; }
+
+  .footer { padding: 4mm 7mm 6mm; display: grid; grid-template-columns: 26mm 1fr; gap: 4mm; align-items: end; }
+  .qr { width: 26mm; height: 26mm; background: #fff; padding: 1mm; border-radius: 1mm; }
+  .contact .url { font-size: 2.4mm; font-weight: 700; margin-bottom: 1.5mm; word-break: break-all; }
+  .contact .wa-label { font-size: 2mm; color: rgba(255,255,255,.55); letter-spacing: 1px; text-transform: uppercase; }
+  .contact .wa { font-size: 3.6mm; font-weight: 700; color: #F5A800; line-height: 1.2; }
+  .contact .stores { font-size: 2mm; color: rgba(255,255,255,.6); margin-top: 1mm; }
+
+  .toolbar { position: fixed; top: 0; left: 0; right: 0; background: #1B2A4A; color: #fff; padding: 8px 16px; display: flex; gap: 12px; align-items: center; z-index: 1000; font-size: 13px; }
+  .toolbar a, .toolbar button { background: #F5A800; color: #1B2A4A; padding: 6px 14px; border-radius: 6px; text-decoration: none; font-weight: 700; border: none; font-size: 13px; cursor: pointer; }
+  .toolbar .muted { color: rgba(255,255,255,.6); }
+  body { padding-top: 44px; }
+  @media print { .toolbar { display: none; } body { padding-top: 0; } }
+</style>
+</head>
+<body>
+<div class="toolbar">
+  <strong>SONKA · DL Pocket Strip (3 per A4 landscape — cut on dashed lines)</strong>
+  <span class="muted">For filling stations · lorry stations · shop windows · mechanic shops</span>
+  <button onclick="window.print()">🖨 Print / Save PDF</button>
+  <a href="index.html">← All flyers</a>
+</div>
+
+<div class="sheet">
+  <!-- DL strip ×3 -->
+  <div class="strip">
+    <div class="head"><div class="logo">SONKA</div><div class="tag">Drive with us</div></div>
+    <div class="pitch"><span class="badge">For drivers</span><h2>Customers find <span>YOU.</span></h2><div class="twi">Stop waiting by the road.</div></div>
+    <div class="photo"></div>
+    <div class="pricing">
+      <div><div class="p-amt">GHS 50<small>/mo</small></div><div class="p-lbl">Trucks</div></div>
+      <div><div class="p-amt">GHS 30<small>/mo</small></div><div class="p-lbl">Aboboyaa</div></div>
+    </div>
+    <div class="footer">
+      <img class="qr" src="assets/qr-webapp.png" alt="">
+      <div class="contact">
+        <div class="url">github.io/Sonka-webapp</div>
+        <div class="wa-label">WhatsApp / Call</div>
+        <div class="wa">0538 214 744</div>
+        <div class="stores">PalmStore · AppGallery · APKPure</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="strip">
+    <div class="head"><div class="logo">SONKA</div><div class="tag">Drive with us</div></div>
+    <div class="pitch"><span class="badge">For drivers</span><h2>Customers find <span>YOU.</span></h2><div class="twi">Stop waiting by the road.</div></div>
+    <div class="photo"></div>
+    <div class="pricing">
+      <div><div class="p-amt">GHS 50<small>/mo</small></div><div class="p-lbl">Trucks</div></div>
+      <div><div class="p-amt">GHS 30<small>/mo</small></div><div class="p-lbl">Aboboyaa</div></div>
+    </div>
+    <div class="footer">
+      <img class="qr" src="assets/qr-webapp.png" alt="">
+      <div class="contact">
+        <div class="url">github.io/Sonka-webapp</div>
+        <div class="wa-label">WhatsApp / Call</div>
+        <div class="wa">0538 214 744</div>
+        <div class="stores">PalmStore · AppGallery · APKPure</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="strip">
+    <div class="head"><div class="logo">SONKA</div><div class="tag">Drive with us</div></div>
+    <div class="pitch"><span class="badge">For drivers</span><h2>Customers find <span>YOU.</span></h2><div class="twi">Stop waiting by the road.</div></div>
+    <div class="photo"></div>
+    <div class="pricing">
+      <div><div class="p-amt">GHS 50<small>/mo</small></div><div class="p-lbl">Trucks</div></div>
+      <div><div class="p-amt">GHS 30<small>/mo</small></div><div class="p-lbl">Aboboyaa</div></div>
+    </div>
+    <div class="footer">
+      <img class="qr" src="assets/qr-webapp.png" alt="">
+      <div class="contact">
+        <div class="url">github.io/Sonka-webapp</div>
+        <div class="wa-label">WhatsApp / Call</div>
+        <div class="wa">0538 214 744</div>
+        <div class="stores">PalmStore · AppGallery · APKPure</div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

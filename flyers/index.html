@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>SONKA Flyer System — print-ready</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root { --navy: #1B2A4A; --gold: #F5A800; --grey: #6C757D; --off: #F8F9FA; }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--off); color: #343A40; line-height: 1.5; }
+
+  header {
+    background: var(--navy); color: #fff; padding: 40px 6% 50px;
+  }
+  .logo { font-family: 'Playfair Display', serif; font-weight: 900; font-size: 28px; letter-spacing: 4px; color: var(--gold); }
+  h1 { font-family: 'Playfair Display', serif; font-weight: 900; font-size: clamp(28px, 4vw, 44px); margin-top: 14px; color: #fff; line-height: 1.1; }
+  header p { color: rgba(255,255,255,.7); margin-top: 10px; max-width: 700px; font-size: 16px; }
+
+  main { padding: 40px 6%; max-width: 1200px; margin: 0 auto; }
+  h2 { font-family: 'Playfair Display', serif; font-size: 24px; color: var(--navy); margin: 32px 0 14px; }
+
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 18px; }
+  .card {
+    background: #fff; border-radius: 14px; padding: 18px;
+    box-shadow: 0 2px 14px rgba(0,0,0,.06);
+    display: flex; flex-direction: column;
+  }
+  .card .size {
+    font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 4px;
+  }
+  .card h3 { font-family: 'Playfair Display', serif; font-size: 18px; color: var(--navy); margin-bottom: 6px; line-height: 1.2; }
+  .card p { font-size: 13px; color: var(--grey); margin-bottom: 12px; flex: 1; }
+  .card .meta { font-size: 12px; color: var(--grey); margin-bottom: 14px; }
+  .card .meta strong { color: var(--navy); }
+  .card a {
+    display: inline-block; padding: 10px 16px; background: var(--gold); color: var(--navy);
+    border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 13px; text-align: center;
+  }
+
+  .planogram { background: #fff; border-radius: 14px; padding: 20px; margin: 18px 0; box-shadow: 0 2px 14px rgba(0,0,0,.06); }
+  .planogram table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  .planogram th, .planogram td { padding: 9px 10px; text-align: left; border-bottom: 1px solid var(--off); vertical-align: top; }
+  .planogram th { font-weight: 700; color: var(--navy); font-size: 12px; text-transform: uppercase; letter-spacing: 1px; }
+  .planogram td.size-cell { font-weight: 700; color: var(--gold); white-space: nowrap; }
+
+  .tips { background: var(--navy); color: #fff; border-radius: 14px; padding: 22px; margin: 18px 0; }
+  .tips h3 { font-family: 'Playfair Display', serif; color: #F5A800; font-size: 18px; margin-bottom: 10px; }
+  .tips ol { padding-left: 22px; font-size: 14px; line-height: 1.65; color: rgba(255,255,255,.85); }
+  .tips strong { color: #F5A800; }
+</style>
+</head>
+<body>
+<header>
+  <div class="logo">SONKA</div>
+  <h1>Flyer System — print, paste, distribute.</h1>
+  <p>
+    Six print-ready designs across A4, A5, A6, DL and sticker formats — built around one brand
+    system. Open any flyer in your browser → <strong>Print → Save as PDF</strong> (or print
+    directly on A4). Take the PDF to any print shop. Edit by typing into the HTML.
+  </p>
+</header>
+
+<main>
+  <h2>Pick a flyer</h2>
+  <div class="grid">
+    <div class="card">
+      <div class="size">A4 · 210×297mm</div>
+      <h3>Customer wall poster</h3>
+      <p>Full hero, 4-step how-it-works, every vehicle, testimonial, all stores, big QR.</p>
+      <div class="meta"><strong>Best for:</strong> markets · residential gates · supermarket boards · church boards · estate offices</div>
+      <a href="a4-customer.html">Open & print →</a>
+    </div>
+
+    <div class="card">
+      <div class="size">A4 · 210×297mm</div>
+      <h3>Driver recruitment poster</h3>
+      <p>Recruitment pitch, 4 driver benefits, subscription pricing (GHS 30/50), MoMo number.</p>
+      <div class="meta"><strong>Best for:</strong> filling stations · lorry stations · mechanic shops · taxi ranks · spare-parts yards</div>
+      <a href="a4-driver.html">Open & print →</a>
+    </div>
+
+    <div class="card">
+      <div class="size">A5 · 148×210mm</div>
+      <h3>Counter card</h3>
+      <p>Condensed customer pitch. 2 fit per A4 at the print shop — half the paper cost.</p>
+      <div class="meta"><strong>Best for:</strong> shop counters · clinic waiting areas · barbershops</div>
+      <a href="a5-counter.html">Open & print →</a>
+    </div>
+
+    <div class="card">
+      <div class="size">A6 · 4 per A4</div>
+      <h3>Handbill (4-up)</h3>
+      <p>4 identical compact handbills on one A4. Cut along the dashed lines. Hand out at scale.</p>
+      <div class="meta"><strong>Best for:</strong> Makola · Kejetia · church gates · trotro stops · taxi handouts</div>
+      <a href="a6-handbill.html">Open & print →</a>
+    </div>
+
+    <div class="card">
+      <div class="size">DL · 3 per A4 landscape</div>
+      <h3>Pocket strip — drivers</h3>
+      <p>Narrow tall strip (99×210mm). 3 fit per A4 landscape. Pricing + MoMo on every strip.</p>
+      <div class="meta"><strong>Best for:</strong> filling station notice boards · narrow shop windows · taxi sun-visors</div>
+      <a href="dl-pocket.html">Open & print →</a>
+    </div>
+
+    <div class="card">
+      <div class="size">85×85mm · 6 per A4</div>
+      <h3>Sticker sheet</h3>
+      <p>6 stickers per A4. Print on adhesive label paper. QR + WhatsApp on each.</p>
+      <div class="meta"><strong>Best for:</strong> truck doors · taxi rear windows · aboboyaa frames · shop entrances</div>
+      <a href="sticker-sheet.html">Open & print →</a>
+    </div>
+  </div>
+
+  <h2>Where to put what — planogram</h2>
+  <div class="planogram">
+    <table>
+      <thead><tr><th>Size</th><th>Audience</th><th>Placement</th><th>Distance read</th></tr></thead>
+      <tbody>
+        <tr><td class="size-cell">A4</td><td>Customers</td><td>Wall posters at markets, residential gates, supermarkets, churches</td><td>2–5 metres</td></tr>
+        <tr><td class="size-cell">A4 Driver</td><td>Drivers</td><td>Wall posters at filling stations, lorry stations, mechanic shops</td><td>2–5 metres</td></tr>
+        <tr><td class="size-cell">A5</td><td>Customers</td><td>Counters at shops, clinics, barbershops</td><td>0.5–1 metre</td></tr>
+        <tr><td class="size-cell">A6</td><td>Customers</td><td>Handed out at markets, churches, trotro stops</td><td>In-hand</td></tr>
+        <tr><td class="size-cell">DL</td><td>Drivers</td><td>Filling station boards, taxi sun-visors, shop window strips</td><td>1–3 metres</td></tr>
+        <tr><td class="size-cell">Sticker</td><td>General</td><td>Truck doors, taxi rear windows, aboboyaa frames, shop entrances</td><td>1–2 metres</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>Print spec</h2>
+  <div class="tips">
+    <h3>How to print these</h3>
+    <ol>
+      <li>Open the flyer in <strong>Google Chrome or Microsoft Edge</strong>.</li>
+      <li>Press <strong>Ctrl + P</strong> (Windows) or <strong>⌘ + P</strong> (Mac). Choose <strong>"Save as PDF"</strong>.</li>
+      <li>In the print dialog: <strong>Margins → None</strong>. <strong>Background graphics → ON</strong> (or "More settings"). <strong>Scale → Default</strong>.</li>
+      <li>Take the saved PDF to any print shop. Tell them: <strong>"A4 colour, single-sided, 130–170gsm paper"</strong> for posters; <strong>"adhesive label paper"</strong> for the sticker sheet.</li>
+      <li>For longevity outdoors: ask for <strong>lamination</strong> (matt finish, A4 lamination is cheap in Ghana).</li>
+    </ol>
+    <h3 style="margin-top:16px;">Brand & content lock</h3>
+    <ol>
+      <li>Colours: navy <strong>#1B2A4A</strong>, gold <strong>#F5A800</strong>. Don't replace.</li>
+      <li>Every flyer has <strong>one QR</strong>, pointing to the SONKA web app. The web app auto-routes each visitor to the right store for their phone (Tecno→PalmStore, Huawei→AppGallery, others→APKPure).</li>
+      <li>Phone numbers shown in full: <strong>0538 214 744</strong> · <strong>0545 989 494</strong>. Both work for WhatsApp + calls.</li>
+      <li>Edit text by opening the .html file in any editor and typing. No design software needed.</li>
+    </ol>
+  </div>
+</main>
+</body>
+</html>

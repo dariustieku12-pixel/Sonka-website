@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>SONKA — Sticker Sheet (6 per A4)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  @page { size: A4 portrait; margin: 0; }
+  html, body { margin: 0; padding: 0; }
+  body { background: #d0d4dc; font-family: 'DM Sans', sans-serif; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+
+  .sheet {
+    width: 210mm; height: 297mm; margin: 12mm auto;
+    display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: repeat(3, 1fr);
+    background: #fff;
+    box-shadow: 0 4px 30px rgba(0,0,0,.25);
+    padding: 5mm; gap: 4mm;
+  }
+  @media print { body { background: white; } .sheet { margin: 0; box-shadow: none; } }
+
+  .sticker {
+    background: #1B2A4A; color: #fff;
+    border: 1.5px dashed rgba(0,0,0,.25); border-radius: 4mm;
+    padding: 6mm 5mm;
+    display: grid; grid-template-columns: 35mm 1fr; gap: 4mm;
+    align-items: center;
+    overflow: hidden;
+  }
+  .sticker .qr {
+    width: 35mm; height: 35mm; background: #fff;
+    padding: 1.5mm; border-radius: 2mm;
+  }
+  .sticker .logo {
+    font-family: 'Playfair Display', serif; font-weight: 900;
+    font-size: 9mm; letter-spacing: 3px; color: #F5A800; line-height: 1;
+  }
+  .sticker .pitch {
+    font-family: 'Playfair Display', serif; font-weight: 700;
+    font-size: 3.6mm; color: #fff; margin-top: 1.5mm; line-height: 1.15;
+  }
+  .sticker .wa-label {
+    font-size: 2mm; color: rgba(255,255,255,.55); letter-spacing: 1px; text-transform: uppercase; margin-top: 3mm;
+  }
+  .sticker .wa { font-size: 4.6mm; font-weight: 700; color: #F5A800; line-height: 1; }
+  .sticker .url { font-size: 2.4mm; margin-top: 2mm; color: rgba(255,255,255,.7); word-break: break-all; }
+
+  .toolbar { position: fixed; top: 0; left: 0; right: 0; background: #1B2A4A; color: #fff; padding: 8px 16px; display: flex; gap: 12px; align-items: center; z-index: 1000; font-size: 13px; }
+  .toolbar a, .toolbar button { background: #F5A800; color: #1B2A4A; padding: 6px 14px; border-radius: 6px; text-decoration: none; font-weight: 700; border: none; font-size: 13px; cursor: pointer; }
+  .toolbar .muted { color: rgba(255,255,255,.6); }
+  body { padding-top: 44px; }
+  @media print { .toolbar { display: none; } body { padding-top: 0; } }
+</style>
+</head>
+<body>
+<div class="toolbar">
+  <strong>SONKA · Sticker Sheet (6 per A4 — cut on dashed lines)</strong>
+  <span class="muted">Best on adhesive label paper. Stick on vehicle doors, taxi back, shop windows.</span>
+  <button onclick="window.print()">🖨 Print / Save PDF</button>
+  <a href="index.html">← All flyers</a>
+</div>
+
+<div class="sheet">
+  <!-- 6 identical stickers -->
+  <div class="sticker">
+    <img class="qr" src="assets/qr-webapp.png" alt="Scan to open SONKA">
+    <div>
+      <div class="logo">SONKA</div>
+      <div class="pitch">Move anything<br>in Ghana.</div>
+      <div class="wa-label">WhatsApp / Call</div>
+      <div class="wa">0538 214 744</div>
+      <div class="url">github.io/Sonka-webapp</div>
+    </div>
+  </div>
+  <div class="sticker">
+    <img class="qr" src="assets/qr-webapp.png" alt="Scan to open SONKA">
+    <div>
+      <div class="logo">SONKA</div>
+      <div class="pitch">Move anything<br>in Ghana.</div>
+      <div class="wa-label">WhatsApp / Call</div>
+      <div class="wa">0538 214 744</div>
+      <div class="url">github.io/Sonka-webapp</div>
+    </div>
+  </div>
+  <div class="sticker">
+    <img class="qr" src="assets/qr-webapp.png" alt="Scan to open SONKA">
+    <div>
+      <div class="logo">SONKA</div>
+      <div class="pitch">Move anything<br>in Ghana.</div>
+      <div class="wa-label">WhatsApp / Call</div>
+      <div class="wa">0538 214 744</div>
+      <div class="url">github.io/Sonka-webapp</div>
+    </div>
+  </div>
+  <div class="sticker">
+    <img class="qr" src="assets/qr-webapp.png" alt="Scan to open SONKA">
+    <div>
+      <div class="logo">SONKA</div>
+      <div class="pitch">Move anything<br>in Ghana.</div>
+      <div class="wa-label">WhatsApp / Call</div>
+      <div class="wa">0538 214 744</div>
+      <div class="url">github.io/Sonka-webapp</div>
+    </div>
+  </div>
+  <div class="sticker">
+    <img class="qr" src="assets/qr-webapp.png" alt="Scan to open SONKA">
+    <div>
+      <div class="logo">SONKA</div>
+      <div class="pitch">Move anything<br>in Ghana.</div>
+      <div class="wa-label">WhatsApp / Call</div>
+      <div class="wa">0538 214 744</div>
+      <div class="url">github.io/Sonka-webapp</div>
+    </div>
+  </div>
+  <div class="sticker">
+    <img class="qr" src="assets/qr-webapp.png" alt="Scan to open SONKA">
+    <div>
+      <div class="logo">SONKA</div>
+      <div class="pitch">Move anything<br>in Ghana.</div>
+      <div class="wa-label">WhatsApp / Call</div>
+      <div class="wa">0538 214 744</div>
+      <div class="url">github.io/Sonka-webapp</div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
