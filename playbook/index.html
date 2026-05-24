@@ -16,7 +16,10 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@400;500;700;900&display=swap" rel="stylesheet">
 
-<!-- MailerLite Universal — handles all 3 waitlist forms on this page -->
+<!-- Gumroad overlay — checkout opens inline, buyer never leaves the page -->
+<script src="https://gumroad.com/js/gumroad.js"></script>
+
+<!-- MailerLite Universal — for the "get free Setup Kit" secondary CTA -->
 <script>
     (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
     .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
@@ -389,7 +392,7 @@
 
 <!-- ── HERO ─────────────────────────────────────────────────── -->
 <section class="hero">
-  <div class="hero-tag">🚀 Launching in 5 weeks</div>
+  <div class="hero-tag" style="background:rgba(245,168,0,0.25); border-color:#F5A800; color:#F5A800;">🔥 Founder Edition · First 100 buyers · $20 (then $79)</div>
   <h1>$<span class="accent">0</span> App Founder</h1>
   <h2>Ship a real app with AI in 30 days.<br>No code. No team. No money.</h2>
   <p class="lede">
@@ -410,17 +413,31 @@
     </video>
   </div>
 
-  <!-- ── WAITLIST FORM (MailerLite) ─────────────────────────────
-    Powered by MailerLite Universal (loaded in <head>).
-    Hydrated client-side by universal.js when the page loads.
-    To change redirect-after-subscribe, configure inside MailerLite:
-      Form → Settings → After subscription → Redirect URL →
-      https://dariustieku12-pixel.github.io/Sonka-website/playbook/setup-kit.html
+  <!-- ── PRIMARY CTA: BUY NOW (Gumroad overlay) ────────────────
+    Replace the href below with your Gumroad product URL once created.
+    Example: https://yourname.gumroad.com/l/0appfounder
   ─────────────────────────────────────────────────────────── -->
-  <label class="form-instruction" id="waitlist">👇 Type your email below — get free Setup Kit + $20 off</label>
-  <div class="ml-form-wrap">
-    <div class="ml-embedded" data-form="IxFLzf"></div>
+  <div id="waitlist" style="max-width:520px;margin:0 auto 14px;">
+    <a class="gumroad-button"
+       href="https://gumroad.com/l/REPLACE_WITH_GUMROAD_URL"
+       data-gumroad-overlay-checkout="true"
+       style="display:block;background:#F5A800;color:#1B2A4A;padding:24px 30px;border-radius:14px;text-decoration:none;font-family:'Playfair Display',serif;font-weight:900;font-size:32px;text-align:center;box-shadow:0 12px 40px rgba(245,168,0,.4);transition:transform .15s;line-height:1;">
+      Buy Now — $20
+    </a>
+    <p style="color:rgba(255,255,255,.6);font-size:13px;margin-top:12px;text-align:center;">
+      Instant download · 14-day money-back · After 100 buyers it's $79
+    </p>
   </div>
+
+  <!-- Secondary CTA: free Setup Kit for non-buyers, captures email for follow-up -->
+  <details style="text-align:center;margin-top:8px;max-width:520px;margin-left:auto;margin-right:auto;">
+    <summary style="color:rgba(255,255,255,.55);font-size:14px;cursor:pointer;list-style:none;">
+      Not ready? Get the free $0 Setup Kit first →
+    </summary>
+    <div class="ml-form-wrap" style="margin-top:14px;">
+      <div class="ml-embedded" data-form="IxFLzf"></div>
+    </div>
+  </details>
 
   <p class="hero-proof">
     Real proof — <a href="https://dariustieku12-pixel.github.io/Sonka-webapp/" target="_blank">SONKA's web app</a> ·
@@ -543,23 +560,42 @@
   </div>
 </section>
 
-<!-- ── PRICING TEASER ───────────────────────────────────────── -->
-<section class="pricing" id="waitlist">
-  <div class="section-tag">Launch pricing</div>
+<!-- ── PRICING ──────────────────────────────────────────────── -->
+<section class="pricing">
+  <div class="section-tag">Founder Edition</div>
   <div class="price-card">
-    <h2>One-time payment, lifetime access</h2>
-    <div class="price-amount"><span class="currency">$</span>79</div>
-    <p class="price-once">All 8 modules · bonus pack · lifetime updates · private Discord</p>
-    <div class="price-waitlist">
-      🎁 Waitlist members get <strong>$20 off</strong> + first access
+    <h2>One-time payment · Lifetime access</h2>
+
+    <div style="display:flex;align-items:baseline;justify-content:center;gap:14px;margin:14px 0 6px;">
+      <div style="font-family:'DM Sans',sans-serif;font-size:32px;color:rgba(255,255,255,.4);text-decoration:line-through;">$79</div>
+      <div class="price-amount" style="margin:0;"><span class="currency">$</span>20</div>
+    </div>
+    <p class="price-once">First 100 buyers only · then $79 for everyone</p>
+
+    <div class="price-waitlist" style="margin-top:18px;text-align:left;">
+      <div style="font-weight:700;color:#F5A800;margin-bottom:8px;font-size:14px;letter-spacing:1px;text-transform:uppercase;">⚡ Instant download today</div>
+      <ul style="list-style:none;padding:0;margin:0;font-size:14px;line-height:1.8;">
+        <li>✓ Full $0 Setup Kit (PDF)</li>
+        <li>✓ SONKA marketplace codebase (sanitised, ready to fork)</li>
+        <li>✓ The flyer engine (auto-generates trade posters)</li>
+        <li>✓ 30 ready-to-use Claude Code prompts</li>
+      </ul>
+      <div style="font-weight:700;color:#F5A800;margin:14px 0 8px;font-size:14px;letter-spacing:1px;text-transform:uppercase;">📦 Ships within 30 days</div>
+      <ul style="list-style:none;padding:0;margin:0;font-size:14px;line-height:1.8;">
+        <li>✓ All 8 modules of the full playbook</li>
+        <li>✓ Private Discord access</li>
+        <li>✓ Lifetime updates</li>
+      </ul>
     </div>
 
-    <label class="form-instruction" style="color:var(--gold);">👇 Type your email below to lock in $59</label>
-    <div class="ml-form-wrap">
-      <div class="ml-embedded" data-form="IxFLzf"></div>
-    </div>
-    <p style="margin-top:14px; font-size:12px; color:rgba(255,255,255,.5);">
-      Pay nothing now. We email you when it launches.
+    <a class="gumroad-button"
+       href="https://gumroad.com/l/REPLACE_WITH_GUMROAD_URL"
+       data-gumroad-overlay-checkout="true"
+       style="display:block;background:#F5A800;color:#1B2A4A;padding:22px 30px;border-radius:12px;text-decoration:none;font-family:'Playfair Display',serif;font-weight:900;font-size:26px;text-align:center;box-shadow:0 8px 30px rgba(245,168,0,.4);margin-top:24px;line-height:1;">
+      Buy Founder Edition — $20
+    </a>
+    <p style="margin-top:12px; font-size:12px; color:rgba(255,255,255,.5);">
+      Instant download · 14-day money-back · Cards · PayPal · Apple Pay
     </p>
   </div>
 </section>
@@ -598,16 +634,30 @@
     </div>
 
     <div class="faq-item">
-      <button class="faq-q" onclick="toggleFaq(this)">When does it ship? <span class="plus">+</span></button>
+      <button class="faq-q" onclick="toggleFaq(this)">What do I get RIGHT NOW when I pay $20? <span class="plus">+</span></button>
       <div class="faq-a">
-        In about 4 weeks. Waitlist members get first access, $20 off, and bonus content not in the public release.
+        The instant the payment clears, Gumroad emails you a download link with: the full $0 Setup Kit (PDF), the sanitised SONKA marketplace codebase (the real working code), the flyer engine that auto-generates trade-vertical posters, and 30 ready-to-use Claude Code prompts from the SONKA build. Total real-world value north of $200.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">When do the 8 modules ship? <span class="plus">+</span></button>
+      <div class="faq-a">
+        Within 30 days. Founder Edition buyers get them progressively as I write them — usually 1-2 modules per week dropped straight into your Discord, plus a fresh download link. After all 8 are done, the playbook is "complete" and the public price jumps to $79.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">Why is it $20 if it's worth more? <span class="plus">+</span></button>
+      <div class="faq-a">
+        Founder Edition pricing — the first 100 buyers get in cheap because the modules are still being written. You're trading "buy fully-finished" for "buy now at 75% off + get everything as it ships". After 100 buyers, price goes to $79 for everyone, no exceptions.
       </div>
     </div>
 
     <div class="faq-item">
       <button class="faq-q" onclick="toggleFaq(this)">Refund policy? <span class="plus">+</span></button>
       <div class="faq-a">
-        14-day money-back, no questions asked. If you don't think this is the most useful $79 you've spent on becoming a founder, email me.
+        14-day money-back, no questions asked. If the Founder Edition isn't the most useful $20 you've spent on becoming a founder, email me and Gumroad refunds you in 60 seconds.
       </div>
     </div>
   </div>
@@ -616,10 +666,17 @@
 <!-- ── FINAL CTA ────────────────────────────────────────────── -->
 <section class="final-cta">
   <h2>The only thing between you and your app is one decision.</h2>
-  <p>Join the waitlist. Get the free $0 Setup Kit today. Lock in $20 off when it launches.</p>
-  <label class="form-instruction" style="color:#fff;">👇 Type your email below</label>
-  <div class="ml-form-wrap">
-    <div class="ml-embedded" data-form="IxFLzf"></div>
+  <p>Founder Edition: <strong>$20</strong> for the first 100 buyers. Instant download. After that it's $79.</p>
+  <div style="max-width:480px;margin:0 auto;">
+    <a class="gumroad-button"
+       href="https://gumroad.com/l/REPLACE_WITH_GUMROAD_URL"
+       data-gumroad-overlay-checkout="true"
+       style="display:block;background:#1B2A4A;color:#F5A800;padding:24px 30px;border-radius:14px;text-decoration:none;font-family:'Playfair Display',serif;font-weight:900;font-size:30px;text-align:center;box-shadow:0 12px 40px rgba(0,0,0,.4);line-height:1;">
+      Buy Now — $20
+    </a>
+    <p style="color:rgba(255,255,255,.85);font-size:13px;margin-top:14px;">
+      Instant download · 14-day refund · Get the SONKA codebase the second you pay
+    </p>
   </div>
 </section>
 
