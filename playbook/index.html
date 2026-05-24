@@ -92,28 +92,43 @@
     font-size: 17px; color: rgba(255,255,255,.65);
     max-width: 620px; margin: 0 auto 40px;
   }
+  /* Clear instruction shown above every signup form */
+  .form-instruction {
+    display: block;
+    font-size: 14px; font-weight: 700;
+    color: var(--gold);
+    margin: 0 auto 10px;
+    letter-spacing: 1px; text-transform: uppercase;
+  }
+
   .hero-form {
     max-width: 480px; margin: 0 auto 16px;
     display: flex; gap: 8px;
-    background: rgba(255,255,255,.06);
-    border: 1px solid rgba(255,255,255,.12);
+    background: #fff;
+    border: 2px solid var(--gold);
     border-radius: 14px; padding: 6px;
+    box-shadow: 0 0 0 4px rgba(245,168,0,.15);
   }
   .hero-form input {
     flex: 1; background: transparent; border: none;
-    color: var(--white); font-size: 16px;
+    color: var(--navy); font-size: 16px; font-weight: 500;
     padding: 12px 14px; font-family: inherit;
     outline: none;
   }
-  .hero-form input::placeholder { color: rgba(255,255,255,.4); }
+  .hero-form input::placeholder { color: rgba(27,42,74,.55); font-weight: 400; }
   .hero-form button {
     background: var(--gold); color: var(--navy);
     border: none; padding: 12px 24px; border-radius: 9px;
     font-weight: 700; font-size: 14px; cursor: pointer;
     font-family: inherit;
     transition: transform .15s;
+    white-space: nowrap;
   }
   .hero-form button:hover { transform: scale(1.03); }
+  @media (max-width: 520px) {
+    .hero-form { flex-direction: column; gap: 6px; }
+    .hero-form input, .hero-form button { width: 100%; }
+  }
   .form-msg {
     font-size: 13px; color: var(--gold); margin-top: 10px;
     min-height: 18px;
@@ -373,8 +388,9 @@
     4. That's it — every signup gets sent to your email
     Alternatives: web3forms.com, getform.io, beehiiv embed
   ─────────────────────────────────────────────────────────── -->
+  <label for="email-hero" class="form-instruction">👇 Type your email below</label>
   <form id="waitlistForm" class="hero-form" action="https://formspree.io/f/xpqnlkpz" method="POST" onsubmit="return handleSubmit(event)">
-    <input type="email" name="email" placeholder="you@example.com" required>
+    <input id="email-hero" type="email" name="email" placeholder="yourname@gmail.com" required aria-label="Email address">
     <input type="hidden" name="source" value="hero">
     <input type="hidden" name="_next" value="https://dariustieku12-pixel.github.io/Sonka-website/playbook/setup-kit.html">
     <button type="submit">Get free $0 Setup Kit</button>
@@ -513,8 +529,9 @@
       🎁 Waitlist members get <strong>$20 off</strong> + first access
     </div>
 
-    <form class="hero-form" action="https://formspree.io/f/xpqnlkpz" method="POST" onsubmit="return handleSubmit(event)" style="background:#fff;border-color:#fff;">
-      <input type="email" name="email" placeholder="you@example.com" required style="color:var(--navy);">
+    <label for="email-pricing" class="form-instruction" style="color:var(--gold);">👇 Type your email below</label>
+    <form class="hero-form" action="https://formspree.io/f/xpqnlkpz" method="POST" onsubmit="return handleSubmit(event)">
+      <input id="email-pricing" type="email" name="email" placeholder="yourname@gmail.com" required aria-label="Email address">
       <input type="hidden" name="source" value="pricing">
       <input type="hidden" name="_next" value="https://dariustieku12-pixel.github.io/Sonka-website/playbook/setup-kit.html">
       <button type="submit">Lock in $59 launch price</button>
@@ -578,8 +595,9 @@
 <section class="final-cta">
   <h2>The only thing between you and your app is one decision.</h2>
   <p>Join the waitlist. Get the free $0 Setup Kit today. Lock in $20 off when it launches.</p>
-  <form class="hero-form" action="https://formspree.io/f/xpqnlkpz" method="POST" onsubmit="return handleSubmit(event)" style="background:rgba(13,24,38,.7);">
-    <input type="email" name="email" placeholder="you@example.com" required>
+  <label for="email-final" class="form-instruction" style="color:#fff;">👇 Type your email below</label>
+  <form class="hero-form" action="https://formspree.io/f/xpqnlkpz" method="POST" onsubmit="return handleSubmit(event)">
+    <input id="email-final" type="email" name="email" placeholder="yourname@gmail.com" required aria-label="Email address">
     <input type="hidden" name="source" value="final-cta">
     <input type="hidden" name="_next" value="https://dariustieku12-pixel.github.io/Sonka-website/playbook/setup-kit.html">
     <button type="submit">Join the waitlist</button>
