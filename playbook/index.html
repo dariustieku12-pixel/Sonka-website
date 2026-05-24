@@ -15,6 +15,15 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+<!-- MailerLite Universal — handles all 3 waitlist forms on this page -->
+<script>
+    (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
+    .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
+    n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
+    (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
+    ml('account', '2374940');
+</script>
 <style>
   :root {
     --navy: #1B2A4A;
@@ -99,6 +108,14 @@
     color: var(--gold);
     margin: 0 auto 10px;
     letter-spacing: 1px; text-transform: uppercase;
+  }
+  /* MailerLite embed wrapper — let MailerLite style internals, we just constrain width */
+  .ml-form-wrap {
+    max-width: 500px;
+    margin: 0 auto 16px;
+  }
+  .ml-form-wrap .ml-embedded {
+    background: transparent;
   }
 
   .hero-form {
@@ -393,22 +410,17 @@
     </video>
   </div>
 
-  <!-- ── WAITLIST FORM ─────────────────────────────────────────
-    TO ACTIVATE THIS FORM:
-    1. Go to https://formspree.io → sign up (free, 1 min)
-    2. Create a new form, copy your form endpoint (looks like https://formspree.io/f/xyzabc)
-    3. Replace YOUR_FORMSPREE_ENDPOINT below with that URL
-    4. That's it — every signup gets sent to your email
-    Alternatives: web3forms.com, getform.io, beehiiv embed
+  <!-- ── WAITLIST FORM (MailerLite) ─────────────────────────────
+    Powered by MailerLite Universal (loaded in <head>).
+    Hydrated client-side by universal.js when the page loads.
+    To change redirect-after-subscribe, configure inside MailerLite:
+      Form → Settings → After subscription → Redirect URL →
+      https://dariustieku12-pixel.github.io/Sonka-website/playbook/setup-kit.html
   ─────────────────────────────────────────────────────────── -->
-  <label for="email-hero" class="form-instruction">👇 Type your email below</label>
-  <form id="waitlistForm" class="hero-form" action="https://formspree.io/f/xpqnlkpz" method="POST" onsubmit="return handleSubmit(event)">
-    <input id="email-hero" type="email" name="email" placeholder="yourname@gmail.com" required aria-label="Email address">
-    <input type="hidden" name="source" value="hero">
-    <input type="hidden" name="_next" value="https://dariustieku12-pixel.github.io/Sonka-website/playbook/setup-kit.html">
-    <button type="submit">Get free $0 Setup Kit</button>
-  </form>
-  <div id="formMsg" class="form-msg"></div>
+  <label class="form-instruction" id="waitlist">👇 Type your email below — get free Setup Kit + $20 off</label>
+  <div class="ml-form-wrap">
+    <div class="ml-embedded" data-form="IxFLzf"></div>
+  </div>
 
   <p class="hero-proof">
     Real proof — <a href="https://dariustieku12-pixel.github.io/Sonka-webapp/" target="_blank">SONKA's web app</a> ·
@@ -542,13 +554,10 @@
       🎁 Waitlist members get <strong>$20 off</strong> + first access
     </div>
 
-    <label for="email-pricing" class="form-instruction" style="color:var(--gold);">👇 Type your email below</label>
-    <form class="hero-form" action="https://formspree.io/f/xpqnlkpz" method="POST" onsubmit="return handleSubmit(event)">
-      <input id="email-pricing" type="email" name="email" placeholder="yourname@gmail.com" required aria-label="Email address">
-      <input type="hidden" name="source" value="pricing">
-      <input type="hidden" name="_next" value="https://dariustieku12-pixel.github.io/Sonka-website/playbook/setup-kit.html">
-      <button type="submit">Lock in $59 launch price</button>
-    </form>
+    <label class="form-instruction" style="color:var(--gold);">👇 Type your email below to lock in $59</label>
+    <div class="ml-form-wrap">
+      <div class="ml-embedded" data-form="IxFLzf"></div>
+    </div>
     <p style="margin-top:14px; font-size:12px; color:rgba(255,255,255,.5);">
       Pay nothing now. We email you when it launches.
     </p>
@@ -608,13 +617,10 @@
 <section class="final-cta">
   <h2>The only thing between you and your app is one decision.</h2>
   <p>Join the waitlist. Get the free $0 Setup Kit today. Lock in $20 off when it launches.</p>
-  <label for="email-final" class="form-instruction" style="color:#fff;">👇 Type your email below</label>
-  <form class="hero-form" action="https://formspree.io/f/xpqnlkpz" method="POST" onsubmit="return handleSubmit(event)">
-    <input id="email-final" type="email" name="email" placeholder="yourname@gmail.com" required aria-label="Email address">
-    <input type="hidden" name="source" value="final-cta">
-    <input type="hidden" name="_next" value="https://dariustieku12-pixel.github.io/Sonka-website/playbook/setup-kit.html">
-    <button type="submit">Join the waitlist</button>
-  </form>
+  <label class="form-instruction" style="color:#fff;">👇 Type your email below</label>
+  <div class="ml-form-wrap">
+    <div class="ml-embedded" data-form="IxFLzf"></div>
+  </div>
 </section>
 
 <!-- ── FOOTER ───────────────────────────────────────────────── -->
@@ -632,26 +638,7 @@
     el.parentElement.classList.toggle('open');
   }
 
-  function handleSubmit(e) {
-    const form = e.target;
-    const action = form.getAttribute('action') || '';
-    // If Formspree endpoint is still the placeholder, take them straight to the
-    // Setup Kit page so the funnel works end-to-end while you wire real capture.
-    if (action.includes('YOUR_FORMSPREE_ENDPOINT')) {
-      e.preventDefault();
-      const email = form.querySelector('input[name="email"]').value;
-      // Stash the email locally so you can collect them manually until Formspree is wired.
-      try {
-        const existing = JSON.parse(localStorage.getItem('sonka_waitlist') || '[]');
-        existing.push({ email, source: form.querySelector('input[name="source"]')?.value || 'unknown', at: new Date().toISOString() });
-        localStorage.setItem('sonka_waitlist', JSON.stringify(existing));
-      } catch {}
-      window.location.href = 'setup-kit.html';
-      return false;
-    }
-    // Real Formspree submit: it will use _next to redirect to setup-kit.html itself.
-    return true;
-  }
+  // (Form handling moved to MailerLite Universal — no custom JS needed)
 </script>
 
 </body>

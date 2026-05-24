@@ -227,16 +227,31 @@ P.S. If this isn't for you, no hard feelings — but reply and tell me why? I re
 
 ---
 
-## How to set this up in Beehiiv (10 min)
+## How to set this up in MailerLite (10 min)
 
-1. **Sign up** at [beehiiv.com](https://beehiiv.com) (free up to 2,500 subscribers)
-2. **Create a publication** — name it whatever (e.g. "$0 App Founder")
-3. **Settings → Subscribe Forms** → create a new form. Copy the embed code.
-4. **Replace the Formspree forms** on the playbook landing page with the Beehiiv embed (I can do this in 2 minutes — paste the embed code here)
-5. **Automations → New Automation** → trigger: "User subscribed". Add 7 emails, paste each one above, set the delay (Day 0, +2, +4, +7, +10, +12, +14).
-6. **Activate.** Done.
+The waitlist form on the landing page is **already wired to your MailerLite
+account** (form ID `IxFLzf`, account `2374940`). Signups land in your
+MailerLite dashboard automatically.
+
+To make the 7-email sequence fire on each signup:
+
+1. **MailerLite → Automations → Create automation**
+2. **Name:** `Playbook nurture sequence`
+3. **Trigger:** *"When subscriber joins a group"* → pick the group your `IxFLzf` form adds to (probably called "Subscribers" by default; create one called "Playbook waitlist" if you want it separate)
+4. **For each email below:** *Add step → Email* → paste **Subject**, **Preheader**, **Body**. Set the delay before each (immediate for Day 0, then 2 days, 2 days, 3 days, 3 days, 2 days, 2 days — that's Day 0 / 2 / 4 / 7 / 10 / 12 / 14).
+5. **Activate.** Done.
 
 Every signup from now → 7 emails fired automatically → you sleep.
+
+### Also configure: redirect to Setup Kit after signup
+
+In MailerLite, open the **form `IxFLzf`** → **Settings → After subscription** → choose **"Redirect to URL"** → paste:
+
+```
+https://dariustieku12-pixel.github.io/Sonka-website/playbook/setup-kit.html
+```
+
+That way every new signup is *instantly* taken to the Setup Kit page and gets value immediately — matches what they were promised in the CTA copy.
 
 ## When Gumroad is set up
 
