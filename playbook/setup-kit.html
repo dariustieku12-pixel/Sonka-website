@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>$0 Setup Kit — $0 App Founder</title>
+<meta name="theme-color" content="#1B2A4A" />
+<meta name="robots" content="noindex" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root { --navy:#1B2A4A; --navy-deep:#0D1826; --gold:#F5A800; --off:#F8F9FA; --grey:#6C757D; }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'DM Sans',system-ui,sans-serif;background:var(--off);color:#343A40;line-height:1.65;-webkit-font-smoothing:antialiased}
+  h1,h2,h3{font-family:'Playfair Display',serif;color:var(--navy);line-height:1.2}
+  a{color:var(--navy);font-weight:700}
+
+  nav{background:var(--navy);padding:0 6%;height:64px;display:flex;align-items:center;justify-content:space-between}
+  .nav-brand{font-family:'Playfair Display',serif;font-weight:900;color:var(--gold);font-size:22px;letter-spacing:3px}
+  .nav-brand-sub{font-size:11px;color:rgba(255,255,255,.5);letter-spacing:2px;margin-left:6px}
+  .nav-cta{background:var(--gold);color:var(--navy);padding:9px 18px;border-radius:8px;font-weight:700;font-size:13px;text-decoration:none}
+
+  .hero{background:var(--navy);color:#fff;padding:60px 6%;text-align:center}
+  .hero .tag{display:inline-block;background:rgba(245,168,0,.15);border:1px solid rgba(245,168,0,.4);color:var(--gold);font-size:12px;font-weight:700;padding:5px 12px;border-radius:20px;letter-spacing:2px;text-transform:uppercase;margin-bottom:20px}
+  .hero h1{color:#fff;font-size:clamp(34px,5vw,52px);margin-bottom:14px}
+  .hero p{color:rgba(255,255,255,.7);font-size:17px;max-width:620px;margin:0 auto}
+
+  main{max-width:760px;margin:0 auto;padding:60px 24px}
+  main > p.lead{font-size:18px;color:#343A40;margin-bottom:32px}
+  main > p.lead strong{color:var(--navy)}
+
+  .step{background:#fff;border-radius:14px;padding:28px;margin-bottom:18px;box-shadow:0 2px 14px rgba(0,0,0,.06);border-left:4px solid var(--gold)}
+  .step-num{display:inline-block;background:var(--gold);color:var(--navy);font-weight:900;font-family:'Playfair Display',serif;width:34px;height:34px;border-radius:50%;text-align:center;line-height:34px;margin-right:10px}
+  .step h2{display:inline-block;font-size:22px;vertical-align:middle}
+  .step p{margin-top:14px;color:#343A40;font-size:15px}
+  .step ol,.step ul{margin:10px 0 0 22px;font-size:15px}
+  .step li{margin-bottom:6px}
+  .step .meta{font-size:13px;color:var(--grey);margin-top:14px;padding-top:14px;border-top:1px solid var(--off)}
+  .step .meta strong{color:var(--navy)}
+  code{background:var(--off);padding:2px 6px;border-radius:4px;font-size:13px;color:var(--navy)}
+
+  .checklist{background:var(--navy);color:#fff;border-radius:14px;padding:28px;margin:32px 0}
+  .checklist h3{color:var(--gold);font-size:20px;margin-bottom:14px}
+  .checklist ul{list-style:none;margin:0}
+  .checklist li{padding:6px 0 6px 28px;position:relative;color:rgba(255,255,255,.85);font-size:14px}
+  .checklist li::before{content:'☐';position:absolute;left:0;color:var(--gold);font-weight:700}
+
+  .upsell{background:linear-gradient(135deg,var(--gold),#b87b00);color:var(--navy);border-radius:14px;padding:32px;margin-top:40px;text-align:center}
+  .upsell h3{color:var(--navy);font-size:24px;margin-bottom:10px}
+  .upsell p{font-size:15px;margin-bottom:18px}
+  .upsell a{display:inline-block;background:var(--navy);color:var(--gold);padding:12px 22px;border-radius:8px;font-weight:700;text-decoration:none}
+
+  footer{background:var(--navy-deep);color:rgba(255,255,255,.4);text-align:center;padding:30px 6%;font-size:13px}
+  footer a{color:rgba(255,255,255,.6)}
+</style>
+</head>
+<body>
+
+<nav>
+  <div><span class="nav-brand">SONKA</span><span class="nav-brand-sub">PLAYBOOK</span></div>
+  <a href="index.html" class="nav-cta">← Back to playbook</a>
+</nav>
+
+<section class="hero">
+  <div class="tag">🎁 The Free Setup Kit</div>
+  <h1>Your $0 toolkit, set up in 60 minutes</h1>
+  <p>Six free accounts, one AI workspace, zero credit cards. Do this once and you're ready to build any app.</p>
+</section>
+
+<main>
+  <p class="lead">
+    This is the prep work. Module 1 of the full <strong>$0 App Founder</strong> playbook
+    (the rest of which ships in 4 weeks). Tick everything off before you sit down to actually
+    build — you'll save days of setup friction.
+  </p>
+
+  <!-- ── Step 1 ───────────────────────────────────────────── -->
+  <div class="step">
+    <span class="step-num">1</span><h2>Install Claude Code</h2>
+    <p>
+      Claude Code is the AI you'll talk to. It runs as a tool you install on your computer
+      (Mac / Windows / Linux) and reads your project files like a developer would.
+    </p>
+    <ol>
+      <li>Open <a href="https://claude.com/code" target="_blank">claude.com/code</a></li>
+      <li>Sign in with Google or email (creates a free Anthropic account)</li>
+      <li>Download the installer for your computer (Mac/Windows/Linux)</li>
+      <li>Open it. It opens inside <strong>VS Code</strong> (a free code editor — install that too if you don't have it: <a href="https://code.visualstudio.com" target="_blank">code.visualstudio.com</a>)</li>
+      <li>You get free credits to start — enough to build a small real app</li>
+    </ol>
+    <div class="meta"><strong>Cost:</strong> $0 (free tier) · <strong>Time:</strong> 15 min</div>
+  </div>
+
+  <!-- ── Step 2 ───────────────────────────────────────────── -->
+  <div class="step">
+    <span class="step-num">2</span><h2>Create a GitHub account</h2>
+    <p>GitHub stores your app's code online — for free — and is how Claude Code saves your work.</p>
+    <ol>
+      <li>Go to <a href="https://github.com" target="_blank">github.com</a></li>
+      <li>Click <strong>Sign up</strong>. Use your real email and a strong password.</li>
+      <li>Pick a username — this becomes your public profile (<code>github.com/yourname</code>)</li>
+      <li>Verify email · skip everything optional</li>
+    </ol>
+    <div class="meta"><strong>Cost:</strong> $0 · <strong>Time:</strong> 5 min</div>
+  </div>
+
+  <!-- ── Step 3 ───────────────────────────────────────────── -->
+  <div class="step">
+    <span class="step-num">3</span><h2>Create a Supabase project (your free database)</h2>
+    <p>Supabase is where your app stores users, posts, bookings — everything. Free for the first 500 MB and 50,000 monthly users. Plenty to ship.</p>
+    <ol>
+      <li>Go to <a href="https://supabase.com" target="_blank">supabase.com</a> → <strong>Start your project</strong></li>
+      <li>Sign in with GitHub (one-click using the account you just made)</li>
+      <li>Click <strong>New project</strong>. Name it anything. Pick the closest region. Generate a database password and <em>save it somewhere</em>.</li>
+      <li>Wait 2 minutes for it to provision</li>
+    </ol>
+    <div class="meta"><strong>Cost:</strong> $0 (free tier) · <strong>Time:</strong> 5 min</div>
+  </div>
+
+  <!-- ── Step 4 ───────────────────────────────────────────── -->
+  <div class="step">
+    <span class="step-num">4</span><h2>Create a Railway account (your free server)</h2>
+    <p>Railway hosts the "brain" of your app — the part that handles signups, bookings, payments. Free for 500 hours/month — well above what a new app needs.</p>
+    <ol>
+      <li>Go to <a href="https://railway.app" target="_blank">railway.app</a> → <strong>Login with GitHub</strong></li>
+      <li>That's it — you get $5 of free monthly credit on the trial plan</li>
+    </ol>
+    <div class="meta"><strong>Cost:</strong> $0 (free tier) · <strong>Time:</strong> 2 min</div>
+  </div>
+
+  <!-- ── Step 5 ───────────────────────────────────────────── -->
+  <div class="step">
+    <span class="step-num">5</span><h2>Create a Higgsfield account (free AI images + videos)</h2>
+    <p>When your app needs photos, ads, or videos, Higgsfield's AI generates them. 10 free credits at signup — enough for ~10 images.</p>
+    <ol>
+      <li>Go to <a href="https://higgsfield.ai" target="_blank">higgsfield.ai</a> → <strong>Sign up</strong></li>
+      <li>Connect with Google or email</li>
+      <li>Your 10 free credits show in the top right</li>
+    </ol>
+    <div class="meta"><strong>Cost:</strong> $0 · <strong>Time:</strong> 3 min</div>
+  </div>
+
+  <!-- ── Step 6 ───────────────────────────────────────────── -->
+  <div class="step">
+    <span class="step-num">6</span><h2>Get a free domain (optional but recommended)</h2>
+    <p>A real URL like <code>yourapp.com</code> makes everything feel legitimate. There are free options.</p>
+    <ol>
+      <li><strong>Cheapest paid (~$10/year):</strong> Namecheap, Porkbun, or Cloudflare Registrar (cheapest, often $7)</li>
+      <li><strong>Truly free:</strong> Get a free <code>.is-a.dev</code> or <code>.js.org</code> via their GitHub-based programs</li>
+      <li><strong>For now (zero cost, zero setup):</strong> use the free <code>yourname.github.io</code> URL — what SONKA's web app uses today</li>
+    </ol>
+    <div class="meta"><strong>Cost:</strong> $0 to ~$10/year · <strong>Time:</strong> 15 min</div>
+  </div>
+
+  <!-- ── Checklist ──────────────────────────────────────────── -->
+  <div class="checklist">
+    <h3>✅ Your $0 toolkit checklist</h3>
+    <ul>
+      <li>Claude Code installed and signed in</li>
+      <li>VS Code installed</li>
+      <li>GitHub account created (username noted)</li>
+      <li>Supabase project provisioned (password saved)</li>
+      <li>Railway account connected to GitHub</li>
+      <li>Higgsfield account (10 free credits)</li>
+      <li>Domain or github.io URL ready</li>
+    </ul>
+  </div>
+
+  <!-- ── Upsell to full playbook ────────────────────────────── -->
+  <div class="upsell">
+    <h3>Setup done. Ready to actually build?</h3>
+    <p>
+      The full <strong>$0 App Founder</strong> playbook ships in 4 weeks. Modules 2–8 cover
+      the conversation flows, the build, going live, marketing, and putting it on autopilot.
+      Waitlist members get $20 off + private Discord access.
+    </p>
+    <a href="index.html#waitlist">Lock in $59 launch price →</a>
+  </div>
+</main>
+
+<footer>
+  <a href="https://dariustieku12-pixel.github.io/Sonka-website/">SONKA</a> ·
+  <a href="index.html">Playbook</a> ·
+  <a href="mailto:teleportprimegh@gmail.com">Contact</a>
+  <p style="margin-top:14px">© 2026 Tele-Port Prime Ghana Ltd</p>
+</footer>
+
+</body>
+</html>

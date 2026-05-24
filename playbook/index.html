@@ -1,0 +1,627 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>$0 App Founder — Ship a real app with AI in 30 days. No code.</title>
+<meta name="description" content="The playbook that shows non-developers how to ship a real, live app using AI for $0. Built by the founder of SONKA — Ghana's first cargo marketplace." />
+<meta name="theme-color" content="#1B2A4A" />
+
+<!-- Open Graph -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="$0 App Founder — Ship a real app with AI in 30 days" />
+<meta property="og:description" content="No code. No team. No money. The playbook from the founder who shipped Ghana's cargo marketplace alone." />
+<meta property="og:url" content="https://dariustieku12-pixel.github.io/Sonka-website/playbook/" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #1B2A4A;
+    --navy-deep: #0D1826;
+    --gold: #F5A800;
+    --gold-soft: rgba(245,168,0,.15);
+    --white: #fff;
+    --off: #F8F9FA;
+    --grey: #6C757D;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'DM Sans', system-ui, sans-serif;
+    background: var(--navy-deep);
+    color: var(--white);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3, h4 { font-family: 'Playfair Display', serif; line-height: 1.1; }
+
+  /* ── Nav ──────────────────────────────────────────────────── */
+  nav {
+    background: var(--navy);
+    padding: 0 6%;
+    height: 64px;
+    display: flex; align-items: center; justify-content: space-between;
+    position: sticky; top: 0; z-index: 100;
+    border-bottom: 1px solid rgba(255,255,255,.08);
+  }
+  .nav-brand {
+    font-family: 'Playfair Display', serif; font-weight: 900;
+    color: var(--gold); font-size: 22px; letter-spacing: 3px;
+  }
+  .nav-brand-sub {
+    font-size: 11px; color: rgba(255,255,255,.5); letter-spacing: 2px;
+    margin-left: 6px;
+  }
+  .nav-cta {
+    background: var(--gold); color: var(--navy);
+    padding: 9px 18px; border-radius: 8px;
+    font-weight: 700; font-size: 13px; text-decoration: none;
+  }
+
+  /* ── Hero ──────────────────────────────────────────────────── */
+  .hero {
+    padding: 80px 6% 100px;
+    background: radial-gradient(ellipse at top, #1B2A4A 0%, #0D1826 100%);
+    text-align: center;
+  }
+  .hero-tag {
+    display: inline-block;
+    background: var(--gold-soft);
+    border: 1px solid rgba(245,168,0,.4);
+    color: var(--gold);
+    font-size: 12px; font-weight: 700;
+    padding: 6px 14px; border-radius: 20px;
+    letter-spacing: 2px; text-transform: uppercase;
+    margin-bottom: 28px;
+  }
+  .hero h1 {
+    font-weight: 900; font-size: clamp(48px, 8vw, 96px);
+    color: var(--white);
+    letter-spacing: -2px; margin-bottom: 12px;
+  }
+  .hero h1 .accent { color: var(--gold); }
+  .hero h2 {
+    font-family: 'DM Sans', sans-serif; font-weight: 700;
+    font-size: clamp(20px, 3vw, 28px);
+    color: rgba(255,255,255,.9);
+    max-width: 720px; margin: 0 auto 20px;
+    letter-spacing: -.5px; line-height: 1.3;
+  }
+  .hero p.lede {
+    font-size: 17px; color: rgba(255,255,255,.65);
+    max-width: 620px; margin: 0 auto 40px;
+  }
+  .hero-form {
+    max-width: 480px; margin: 0 auto 16px;
+    display: flex; gap: 8px;
+    background: rgba(255,255,255,.06);
+    border: 1px solid rgba(255,255,255,.12);
+    border-radius: 14px; padding: 6px;
+  }
+  .hero-form input {
+    flex: 1; background: transparent; border: none;
+    color: var(--white); font-size: 16px;
+    padding: 12px 14px; font-family: inherit;
+    outline: none;
+  }
+  .hero-form input::placeholder { color: rgba(255,255,255,.4); }
+  .hero-form button {
+    background: var(--gold); color: var(--navy);
+    border: none; padding: 12px 24px; border-radius: 9px;
+    font-weight: 700; font-size: 14px; cursor: pointer;
+    font-family: inherit;
+    transition: transform .15s;
+  }
+  .hero-form button:hover { transform: scale(1.03); }
+  .form-msg {
+    font-size: 13px; color: var(--gold); margin-top: 10px;
+    min-height: 18px;
+  }
+  .hero-proof {
+    font-size: 13px; color: rgba(255,255,255,.45);
+    margin-top: 30px;
+  }
+  .hero-proof a { color: var(--gold); text-decoration: underline; text-underline-offset: 3px; }
+
+  /* ── Proof / Who ──────────────────────────────────────────── */
+  .who {
+    padding: 80px 6%;
+    background: var(--navy);
+    text-align: center;
+  }
+  .who-grid {
+    display: grid; grid-template-columns: 200px 1fr;
+    gap: 50px; max-width: 920px; margin: 0 auto;
+    align-items: center; text-align: left;
+  }
+  .who-photo {
+    width: 200px; height: 200px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--gold), #b87b00);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Playfair Display', serif; font-size: 80px;
+    color: var(--navy); font-weight: 900;
+  }
+  .who h2 { font-size: 32px; color: var(--gold); margin-bottom: 14px; }
+  .who p { color: rgba(255,255,255,.85); font-size: 17px; margin-bottom: 10px; }
+  .who .stats {
+    display: flex; gap: 28px; margin-top: 20px; flex-wrap: wrap;
+  }
+  .who .stat { }
+  .who .stat .v {
+    font-family: 'Playfair Display', serif; font-weight: 900;
+    font-size: 28px; color: var(--gold); line-height: 1;
+  }
+  .who .stat .l {
+    font-size: 12px; color: rgba(255,255,255,.5);
+    text-transform: uppercase; letter-spacing: 1px; margin-top: 4px;
+  }
+
+  /* ── Promise ──────────────────────────────────────────────── */
+  .promise {
+    padding: 80px 6%;
+    background: var(--navy-deep);
+  }
+  .promise-wrap { max-width: 920px; margin: 0 auto; }
+  .section-tag {
+    font-size: 12px; font-weight: 700; letter-spacing: 3px;
+    color: var(--gold); text-transform: uppercase; margin-bottom: 14px;
+    text-align: center;
+  }
+  .promise h2 {
+    font-size: clamp(32px, 5vw, 48px); color: var(--white);
+    text-align: center; margin-bottom: 50px;
+  }
+  .promise h2 .accent { color: var(--gold); }
+  .promise-list {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 18px;
+  }
+  .promise-item {
+    background: rgba(255,255,255,.04);
+    border: 1px solid rgba(255,255,255,.08);
+    border-left: 3px solid var(--gold);
+    border-radius: 12px;
+    padding: 22px;
+  }
+  .promise-item .check {
+    color: var(--gold); font-weight: 900; font-size: 18px; margin-right: 6px;
+  }
+  .promise-item strong {
+    color: var(--white); font-size: 16px;
+    display: block; margin-bottom: 6px;
+  }
+  .promise-item p { color: rgba(255,255,255,.6); font-size: 14px; }
+
+  /* ── Modules ──────────────────────────────────────────────── */
+  .modules {
+    padding: 80px 6%;
+    background: var(--navy);
+  }
+  .modules-wrap { max-width: 1100px; margin: 0 auto; }
+  .modules h2 {
+    font-size: clamp(32px, 5vw, 48px); color: var(--white);
+    text-align: center; margin-bottom: 50px;
+  }
+  .modules-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 16px;
+  }
+  .module {
+    background: var(--navy-deep);
+    border-radius: 12px; padding: 22px;
+    border: 1px solid rgba(255,255,255,.06);
+    transition: transform .15s, border-color .15s;
+  }
+  .module:hover { transform: translateY(-2px); border-color: var(--gold); }
+  .module .n {
+    font-family: 'Playfair Display', serif; font-weight: 900;
+    color: var(--gold); font-size: 32px; line-height: 1;
+    margin-bottom: 10px;
+  }
+  .module h3 {
+    font-family: 'DM Sans', sans-serif; font-weight: 700;
+    color: var(--white); font-size: 17px; margin-bottom: 6px;
+  }
+  .module p { color: rgba(255,255,255,.55); font-size: 13px; line-height: 1.5; }
+  .module .bonus {
+    background: var(--gold); color: var(--navy);
+    font-size: 10px; font-weight: 700; padding: 3px 8px; border-radius: 4px;
+    display: inline-block; margin-bottom: 10px;
+    letter-spacing: 1px; text-transform: uppercase;
+  }
+
+  /* ── Differentiator ────────────────────────────────────────── */
+  .diff {
+    padding: 80px 6%; background: var(--navy-deep);
+  }
+  .diff-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 30px; max-width: 920px; margin: 0 auto;
+  }
+  .diff-card {
+    background: var(--navy);
+    border-radius: 14px; padding: 30px;
+    border-top: 4px solid;
+  }
+  .diff-not { border-top-color: #DC3545; }
+  .diff-is { border-top-color: var(--gold); }
+  .diff-card h3 {
+    font-size: 22px; color: var(--white); margin-bottom: 16px;
+  }
+  .diff-card ul { list-style: none; }
+  .diff-card li {
+    font-size: 14px; color: rgba(255,255,255,.75);
+    padding: 8px 0; padding-left: 24px; position: relative;
+  }
+  .diff-not li::before { content: '✕'; color: #DC3545; position: absolute; left: 0; font-weight: 700; }
+  .diff-is li::before { content: '✓'; color: var(--gold); position: absolute; left: 0; font-weight: 700; }
+  @media (max-width: 760px) { .diff-grid { grid-template-columns: 1fr; } .who-grid { grid-template-columns: 1fr; text-align: center; } .who-photo { margin: 0 auto; } }
+
+  /* ── Pricing teaser ────────────────────────────────────────── */
+  .pricing {
+    padding: 80px 6%;
+    background: var(--navy);
+    text-align: center;
+  }
+  .price-card {
+    max-width: 520px; margin: 0 auto;
+    background: linear-gradient(135deg, rgba(245,168,0,.1), rgba(245,168,0,.02));
+    border: 2px solid var(--gold);
+    border-radius: 20px; padding: 40px 30px;
+  }
+  .price-card h2 {
+    font-size: 28px; color: var(--white); margin-bottom: 14px;
+  }
+  .price-amount {
+    font-family: 'Playfair Display', serif; font-weight: 900;
+    color: var(--gold); font-size: 72px; line-height: 1;
+    margin: 16px 0 6px;
+  }
+  .price-amount .currency { font-size: 32px; vertical-align: top; }
+  .price-once { font-size: 13px; color: rgba(255,255,255,.55); margin-bottom: 24px; }
+  .price-waitlist {
+    background: var(--gold-soft); color: var(--gold);
+    padding: 10px 16px; border-radius: 10px;
+    font-size: 13px; font-weight: 700; margin-bottom: 24px;
+    border: 1px solid rgba(245,168,0,.4);
+  }
+
+  /* ── FAQ ────────────────────────────────────────────────────── */
+  .faq {
+    padding: 80px 6%;
+    background: var(--navy-deep);
+  }
+  .faq-wrap { max-width: 720px; margin: 0 auto; }
+  .faq h2 {
+    font-size: clamp(28px, 4vw, 40px); color: var(--white);
+    text-align: center; margin-bottom: 40px;
+  }
+  .faq-item {
+    background: var(--navy);
+    border-radius: 12px; margin-bottom: 10px;
+    overflow: hidden;
+  }
+  .faq-q {
+    width: 100%; background: none; border: none;
+    color: var(--white); font: 700 16px 'DM Sans', sans-serif;
+    padding: 18px 20px; text-align: left; cursor: pointer;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .faq-q:hover { color: var(--gold); }
+  .faq-q .plus { color: var(--gold); font-size: 22px; font-weight: 900; }
+  .faq-a {
+    padding: 0 20px 20px;
+    color: rgba(255,255,255,.7); font-size: 14px; line-height: 1.6;
+    display: none;
+  }
+  .faq-item.open .faq-a { display: block; }
+  .faq-item.open .faq-q .plus { transform: rotate(45deg); display: inline-block; }
+
+  /* ── Final CTA ─────────────────────────────────────────────── */
+  .final-cta {
+    padding: 80px 6%;
+    background: linear-gradient(135deg, var(--navy), var(--gold));
+    text-align: center;
+  }
+  .final-cta h2 {
+    font-size: clamp(32px, 5vw, 52px); color: var(--white);
+    margin-bottom: 16px;
+  }
+  .final-cta p {
+    color: rgba(255,255,255,.85); font-size: 17px;
+    max-width: 580px; margin: 0 auto 30px;
+  }
+
+  /* ── Footer ────────────────────────────────────────────────── */
+  footer {
+    padding: 40px 6%;
+    background: var(--navy-deep);
+    text-align: center;
+    color: rgba(255,255,255,.4); font-size: 13px;
+    border-top: 1px solid rgba(255,255,255,.06);
+  }
+  footer a { color: rgba(255,255,255,.6); text-decoration: none; margin: 0 8px; }
+  footer a:hover { color: var(--gold); }
+</style>
+</head>
+<body>
+
+<!-- ── NAV ──────────────────────────────────────────────────── -->
+<nav>
+  <div>
+    <span class="nav-brand">SONKA</span><span class="nav-brand-sub">PLAYBOOK</span>
+  </div>
+  <a href="#waitlist" class="nav-cta">Join waitlist</a>
+</nav>
+
+<!-- ── HERO ─────────────────────────────────────────────────── -->
+<section class="hero">
+  <div class="hero-tag">🚀 Launching in 5 weeks</div>
+  <h1>$<span class="accent">0</span> App Founder</h1>
+  <h2>Ship a real app with AI in 30 days.<br>No code. No team. No money.</h2>
+  <p class="lede">
+    I built and shipped Ghana's cargo marketplace alone — using only Claude Code and free tools.
+    This playbook shows you exactly how to do the same with your own idea. No tech skills required.
+  </p>
+
+  <!-- ── WAITLIST FORM ─────────────────────────────────────────
+    TO ACTIVATE THIS FORM:
+    1. Go to https://formspree.io → sign up (free, 1 min)
+    2. Create a new form, copy your form endpoint (looks like https://formspree.io/f/xyzabc)
+    3. Replace YOUR_FORMSPREE_ENDPOINT below with that URL
+    4. That's it — every signup gets sent to your email
+    Alternatives: web3forms.com, getform.io, beehiiv embed
+  ─────────────────────────────────────────────────────────── -->
+  <form id="waitlistForm" class="hero-form" action="https://formspree.io/f/YOUR_FORMSPREE_ENDPOINT" method="POST" onsubmit="return handleSubmit(event)">
+    <input type="email" name="email" placeholder="you@example.com" required>
+    <input type="hidden" name="source" value="hero">
+    <input type="hidden" name="_next" value="https://dariustieku12-pixel.github.io/Sonka-website/playbook/setup-kit.html">
+    <button type="submit">Get free $0 Setup Kit</button>
+  </form>
+  <div id="formMsg" class="form-msg"></div>
+
+  <p class="hero-proof">
+    Real proof — <a href="https://dariustieku12-pixel.github.io/Sonka-webapp/" target="_blank">SONKA's web app</a> ·
+    <a href="https://www.palmplaystore.com/detail/com.teleportprime.sonka?country=GH" target="_blank">on PalmStore</a> ·
+    <a href="https://appgallery.huawei.com/app/C117421289" target="_blank">on AppGallery</a>
+  </p>
+</section>
+
+<!-- ── WHO MADE THIS ────────────────────────────────────────── -->
+<section class="who">
+  <div class="who-grid">
+    <div class="who-photo">D</div>
+    <div>
+      <div class="section-tag" style="text-align: left;">Who's behind this</div>
+      <h2>Darius Tieku, founder of SONKA</h2>
+      <p>
+        I'm a structural engineer who shipped <strong>SONKA</strong> — Ghana's first cargo marketplace —
+        alone. No coding bootcamp. No CTO. No funding round. Just me, Claude Code, and free tools.
+      </p>
+      <p>
+        The same exact process that took SONKA from idea to live app is in this playbook.
+        Step by step, screenshot by screenshot, conversation by conversation.
+      </p>
+      <div class="stats">
+        <div class="stat"><div class="v">$0</div><div class="l">Tool cost</div></div>
+        <div class="stat"><div class="v">3</div><div class="l">App stores live</div></div>
+        <div class="stat"><div class="v">90 days</div><div class="l">Idea → shipped</div></div>
+        <div class="stat"><div class="v">1</div><div class="l">Person team</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── PROMISE ──────────────────────────────────────────────── -->
+<section class="promise">
+  <div class="promise-wrap">
+    <div class="section-tag">The Promise</div>
+    <h2>By the end of this playbook, <span class="accent">you will have shipped:</span></h2>
+    <div class="promise-list">
+      <div class="promise-item">
+        <strong>A real, live app</strong>
+        <p>Not a tutorial demo. Not a sandbox. A real product strangers can sign up to and use.</p>
+      </div>
+      <div class="promise-item">
+        <strong>On your own domain</strong>
+        <p>Branded URL like yourapp.com — included free in the playbook (no domain purchase required).</p>
+      </div>
+      <div class="promise-item">
+        <strong>With real users</strong>
+        <p>Signup, login, profiles — the full user lifecycle, working with real phone numbers.</p>
+      </div>
+      <div class="promise-item">
+        <strong>Mobile + web</strong>
+        <p>One codebase, runs as a website AND a phone app installable from app stores.</p>
+      </div>
+      <div class="promise-item">
+        <strong>For exactly $0 in tool costs</strong>
+        <p>Every tool, hosting service, and platform used is on a free tier. No credit card required to ship.</p>
+      </div>
+      <div class="promise-item">
+        <strong>In about 30 days of evenings</strong>
+        <p>~1 hour per evening. You'll have a shipped app before next month.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── MODULES ──────────────────────────────────────────────── -->
+<section class="modules">
+  <div class="modules-wrap">
+    <div class="section-tag">What's inside</div>
+    <h2>The 8 modules</h2>
+    <div class="modules-grid">
+      <div class="module"><div class="n">01</div><h3>The mindset shift</h3><p>You're the founder. AI is your developer. How to think about the conversation.</p></div>
+      <div class="module"><div class="n">02</div><h3>Free tool setup</h3><p>Install Claude Code. Create GitHub, Supabase, Railway, Higgsfield accounts. Every step screenshotted.</p></div>
+      <div class="module"><div class="n">03</div><h3>Planning your app with AI</h3><p>The exact prompts that turn a fuzzy idea into a real plan. What questions Claude asks you and how to answer.</p></div>
+      <div class="module"><div class="n">04</div><h3>The conversation flows</h3><p>Sessions, todos, "build me a…" patterns. Debugging without code. Reading AI output as a non-coder.</p></div>
+      <div class="module"><div class="n">05</div><h3>Build a real app</h3><p>Step-by-step. Auth → database → map → list → form → real-time → live deploy. Your own version running.</p></div>
+      <div class="module"><div class="n">06</div><h3>Go live for free</h3><p>GitHub Pages, free domains, mobile via Expo. Real URL. Real install.</p></div>
+      <div class="module"><div class="n">07</div><h3>Marketing for $0</h3><p>The flyer engine (already built), AI-generated images, WhatsApp distribution, social posts on autopilot.</p></div>
+      <div class="module"><div class="n">08</div><h3>Put it on autopilot</h3><p>n8n / Make / Zapier free tiers. Scheduled jobs. Automated customer responses. The set-and-forget stack.</p></div>
+      <div class="module" style="grid-column: 1 / -1; border: 2px solid var(--gold);">
+        <div class="bonus">Bonus pack</div>
+        <h3>🎁 The full SONKA toolkit</h3>
+        <p>
+          The prompts I used to build SONKA · sanitised conversation transcripts as case studies ·
+          CLAUDE.md templates · the flyer engine ready to fork · 30 Higgsfield prompt recipes.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── DIFFERENTIATOR ───────────────────────────────────────── -->
+<section class="diff">
+  <div class="modules-wrap">
+    <div class="section-tag">What this is — and isn't</div>
+    <div class="diff-grid">
+      <div class="diff-card diff-not">
+        <h3>What this is NOT</h3>
+        <ul>
+          <li>Another coding course you'll quit in week 2</li>
+          <li>A tutorial that builds a "to-do app" demo</li>
+          <li>Theory without a real product at the end</li>
+          <li>Tied to paid tools you can't afford</li>
+          <li>"Subscribe and learn" — no, you ship</li>
+        </ul>
+      </div>
+      <div class="diff-card diff-is">
+        <h3>What this IS</h3>
+        <ul>
+          <li>The exact method that shipped a real Ghana marketplace</li>
+          <li>Step-by-step, click-by-click, screenshot-heavy</li>
+          <li>For people who've been told "you need a CTO"</li>
+          <li>$0 tool budget, start-to-finish</li>
+          <li>A real live app on real URLs at the end</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── PRICING TEASER ───────────────────────────────────────── -->
+<section class="pricing" id="waitlist">
+  <div class="section-tag">Launch pricing</div>
+  <div class="price-card">
+    <h2>One-time payment, lifetime access</h2>
+    <div class="price-amount"><span class="currency">$</span>79</div>
+    <p class="price-once">All 8 modules · bonus pack · lifetime updates · private Discord</p>
+    <div class="price-waitlist">
+      🎁 Waitlist members get <strong>$20 off</strong> + first access
+    </div>
+
+    <form class="hero-form" action="https://formspree.io/f/YOUR_FORMSPREE_ENDPOINT" method="POST" onsubmit="return handleSubmit(event)" style="background:#fff;border-color:#fff;">
+      <input type="email" name="email" placeholder="you@example.com" required style="color:var(--navy);">
+      <input type="hidden" name="source" value="pricing">
+      <input type="hidden" name="_next" value="https://dariustieku12-pixel.github.io/Sonka-website/playbook/setup-kit.html">
+      <button type="submit">Lock in $59 launch price</button>
+    </form>
+    <p style="margin-top:14px; font-size:12px; color:rgba(255,255,255,.5);">
+      Pay nothing now. We email you when it launches.
+    </p>
+  </div>
+</section>
+
+<!-- ── FAQ ──────────────────────────────────────────────────── -->
+<section class="faq">
+  <div class="faq-wrap">
+    <h2>Questions before you commit</h2>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">Do I need to know how to code? <span class="plus">+</span></button>
+      <div class="faq-a">
+        No. The whole point. If you can type a message in WhatsApp and follow numbered steps, you can ship an app with this playbook. AI does the technical work.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">What kind of apps can I build? <span class="plus">+</span></button>
+      <div class="faq-a">
+        Marketplaces (like SONKA), booking apps, social/community apps, e-commerce, internal business tools, listing sites — any app with users, data, and a screen. Not games or AR/VR.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">What if I get stuck? <span class="plus">+</span></button>
+      <div class="faq-a">
+        You get private Discord access where I and other builders help. Plus an AI chatbot trained on the playbook for instant answers.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">Is it really $0? <span class="plus">+</span></button>
+      <div class="faq-a">
+        Every tool used has a free tier sufficient to ship and serve real users. You'll only pay when your app grows past those tiers (a good problem). Module 8 covers when and where it makes sense to start spending.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">When does it ship? <span class="plus">+</span></button>
+      <div class="faq-a">
+        In about 4 weeks. Waitlist members get first access, $20 off, and bonus content not in the public release.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">Refund policy? <span class="plus">+</span></button>
+      <div class="faq-a">
+        14-day money-back, no questions asked. If you don't think this is the most useful $79 you've spent on becoming a founder, email me.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FINAL CTA ────────────────────────────────────────────── -->
+<section class="final-cta">
+  <h2>The only thing between you and your app is one decision.</h2>
+  <p>Join the waitlist. Get the free $0 Setup Kit today. Lock in $20 off when it launches.</p>
+  <form class="hero-form" action="https://formspree.io/f/YOUR_FORMSPREE_ENDPOINT" method="POST" onsubmit="return handleSubmit(event)" style="background:rgba(13,24,38,.7);">
+    <input type="email" name="email" placeholder="you@example.com" required>
+    <input type="hidden" name="source" value="final-cta">
+    <input type="hidden" name="_next" value="https://dariustieku12-pixel.github.io/Sonka-website/playbook/setup-kit.html">
+    <button type="submit">Join the waitlist</button>
+  </form>
+</section>
+
+<!-- ── FOOTER ───────────────────────────────────────────────── -->
+<footer>
+  <div>
+    <a href="https://dariustieku12-pixel.github.io/Sonka-website/">SONKA</a> ·
+    <a href="https://dariustieku12-pixel.github.io/Sonka-webapp/">Web app</a> ·
+    <a href="mailto:teleportprimegh@gmail.com">Contact</a>
+  </div>
+  <p style="margin-top:16px; font-size:12px;">© 2026 Tele-Port Prime Ghana Ltd · Accra, Ghana</p>
+</footer>
+
+<script>
+  function toggleFaq(el) {
+    el.parentElement.classList.toggle('open');
+  }
+
+  function handleSubmit(e) {
+    const form = e.target;
+    const action = form.getAttribute('action') || '';
+    // If Formspree endpoint is still the placeholder, take them straight to the
+    // Setup Kit page so the funnel works end-to-end while you wire real capture.
+    if (action.includes('YOUR_FORMSPREE_ENDPOINT')) {
+      e.preventDefault();
+      const email = form.querySelector('input[name="email"]').value;
+      // Stash the email locally so you can collect them manually until Formspree is wired.
+      try {
+        const existing = JSON.parse(localStorage.getItem('sonka_waitlist') || '[]');
+        existing.push({ email, source: form.querySelector('input[name="source"]')?.value || 'unknown', at: new Date().toISOString() });
+        localStorage.setItem('sonka_waitlist', JSON.stringify(existing));
+      } catch {}
+      window.location.href = 'setup-kit.html';
+      return false;
+    }
+    // Real Formspree submit: it will use _next to redirect to setup-kit.html itself.
+    return true;
+  }
+</script>
+
+</body>
+</html>
