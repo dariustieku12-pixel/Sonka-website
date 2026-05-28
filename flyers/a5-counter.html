@@ -40,10 +40,20 @@
   .step-t { font-weight: 700; font-size: 3mm; margin-top: 1mm; }
   .step-d { font-size: 2.5mm; color: rgba(255,255,255,.65); line-height: 1.3; margin-top: 0.5mm; }
 
-  .vehicles { padding: 4mm 9mm 4mm; background: #fff; color: #1B2A4A; }
-  .veh-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2mm; }
-  .veh img { width: 100%; height: 14mm; object-fit: cover; border-radius: 1.5mm; }
-  .veh-name { font-size: 2.2mm; font-weight: 700; text-align: center; margin-top: 1mm; }
+  .vehicles { background: #fff; color: #1B2A4A; }
+  .veh-hero { width: 100%; height: 52mm; overflow: hidden; }
+  .veh-hero img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .veh-strip {
+    background: #1B2A4A; color: #fff;
+    padding: 2.8mm 9mm; text-align: center;
+    font-family: 'DM Sans', sans-serif; font-weight: 700;
+    font-size: 2.8mm; letter-spacing: .3px;
+    border-top: 1mm solid #F5A800;
+  }
+  .veh-strip .lbl {
+    font-size: 2mm; color: #F5A800; letter-spacing: 1.5px;
+    text-transform: uppercase; margin-bottom: 1mm; font-weight: 700;
+  }
 
   .cta { flex: 1; padding: 5mm 9mm 5mm; display: grid; grid-template-columns: 36mm 1fr; gap: 5mm; align-items: start; }
   .qr-wrap { text-align: center; }
@@ -96,12 +106,12 @@
   </div>
 
   <div class="vehicles">
-    <div class="section-tag" style="color:#1B2A4A;">All vehicles</div>
-    <div class="veh-grid">
-      <div class="veh"><img src="assets/vehicles/rhino_truck.jpg" alt=""><div class="veh-name">Rhino</div></div>
-      <div class="veh"><img src="assets/vehicles/kia_truck.png" alt=""><div class="veh-name">Kia</div></div>
-      <div class="veh"><img src="assets/vehicles/aboboyaa.jpg" alt=""><div class="veh-name">Aboboyaa</div></div>
-      <div class="veh"><img src="assets/vehicles/motorcargo.jpg" alt=""><div class="veh-name">Two Tyres</div></div>
+    <div class="veh-hero">
+      <img src="assets/trade/aboboyaa-loaded.png" alt="SONKA aboboyaa loaded with cement and wood at a Ghana market">
+    </div>
+    <div class="veh-strip">
+      <div class="lbl">All vehicles available</div>
+      🛺 Aboboyaa · 🚐 Kia · 🚛 Rhino · 🏍️ Two Tyres
     </div>
   </div>
 
