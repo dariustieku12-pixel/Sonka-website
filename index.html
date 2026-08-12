@@ -34,7 +34,7 @@
 "applicationCategory":"TransportationApplication","operatingSystem":"Android",
 "offers":{"@type":"Offer","price":"0","priceCurrency":"GHS"},
 "author":{"@type":"Organization","name":"Tele-Port Prime Ghana Ltd","url":"https://sonkagh.com/"},
-"countriesSupported":"GH","downloadUrl":"https://apkpure.com/sonka/com.teleportprime.sonka"}
+"countriesSupported":"GH","downloadUrl":"https://github.com/dariustieku12-pixel/sonka-releases/releases/latest/download/SONKA.apk"}
 </script>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -416,6 +416,8 @@ section{position:relative}
 .store{display:inline-flex;align-items:center;gap:9px;padding:13px 22px;border-radius:12px;
   background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.22);color:#fff;
   font-weight:600;font-size:.92rem;transition:all .3s var(--e)}
+.store-primary{background:var(--gold);border-color:var(--gold);color:#12203c}
+.store-primary:hover{background:var(--gold-lit,#ffc23d);border-color:var(--gold-lit,#ffc23d);color:#12203c}
 .store:hover{background:rgba(245,168,0,.16);border-color:var(--gold);transform:translateY(-3px)}
 .store b{font-weight:700}
 .fine{color:rgba(255,255,255,.6);font-size:.82rem;margin-top:18px}
@@ -764,11 +766,27 @@ body.lite .hero-stage{transform:none!important}
     <div class="twi rise">Yɛn kɔ! 🚛</div>
     <h2 class="rise" data-d="1">Your load is waiting. Let's move it.</h2>
     <p class="lede rise" data-d="2">Free to download. Free for customers, always. Works on any Android phone.</p>
+    <!-- Direct download first, and visually primary.
+         The three stores each add a step: a listing page, sometimes an account,
+         sometimes their own installer. This one is the APK itself, from SONKA.
+
+         The URL uses GitHub's /releases/latest/download/ form, which always
+         resolves to the newest release as long as the asset keeps the same
+         filename. That is the point: this link never needs editing again, and a
+         download link that needs remembering is a download link that goes
+         stale. The previous one pointed at an EAS build artifact, which EAS
+         prunes — it would have died silently. -->
     <div class="stores rise" data-d="3">
+      <a class="store store-primary" href="https://github.com/dariustieku12-pixel/sonka-releases/releases/latest/download/SONKA.apk">⬇ <b>Download for Android</b></a>
       <a class="store" href="https://www.palmplaystore.com/detail/com.teleportprime.sonka?country=GH" target="_blank" rel="noopener">🌴 <b>PalmStore</b></a>
       <a class="store" href="https://appgallery.huawei.com/app/C117421289" target="_blank" rel="noopener">🟥 <b>AppGallery</b></a>
       <a class="store" href="https://apkpure.com/sonka/com.teleportprime.sonka" target="_blank" rel="noopener">⬇ <b>APKPure</b></a>
     </div>
+    <!-- Said plainly, because Android WILL warn about the file and a first-time
+         user reads that warning as "this app is unsafe" and stops. -->
+    <p class="fine rise" data-d="3" style="margin-top:-4px">
+      Downloading direct? Open the file and choose <b>Allow from this source</b> when Android asks.
+    </p>
 
     <div class="trust rise" data-d="3">
       <div class="trust-item"><span>🏛️</span><div><b>Registered in Ghana</b>Tele-Port Prime Ghana Ltd · CS014610126</div></div>
