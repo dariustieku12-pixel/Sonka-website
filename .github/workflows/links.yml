@@ -1,0 +1,41 @@
+# Check the download link still resolves.
+#
+# WHY THIS ONE CHECK
+# sonkagh.com's primary call to action is the APK download. It previously
+# pointed at an EAS build artifact, and EAS PRUNES artifacts — the link would
+# have died silently and every "Download for Android" tap would have gone
+# nowhere, with nothing to notice it but a confused user who did not report it.
+#
+# It now points at GitHub's /releases/latest/download/ form, which is stable by
+# design. This asserts that it stays that way: a 404 here means the app cannot
+# be installed by anybody arriving from the website.
+name: Link check
+
+on:
+  push:
+    branches: [main, master]
+  schedule:
+    # Weekly. A dead download link is not urgent-by-the-minute, but a month of
+    # it is a month of lost installs.
+    - cron: "0 9 * * 1"
+  workflow_dispatch:
+
+jobs:
+  download-link:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: The download link on the homepage resolves
+        run: |
+          URL=$(grep -oE 'https://github.com/[^"]+/releases/latest/download/[^"]+\.apk' index.html | head -1)
+          if [ -z "$URL" ]; then
+            echo "No direct download link found in index.html"
+            exit 1
+          fi
+          echo "Checking $URL"
+          CODE=$(curl -s -o /dev/null -w "%{http_code}" -L --max-time 60 "$URL")
+          echo "HTTP $CODE"
+          # GitHub redirects release assets to a CDN; 200 is the only pass.
+          [ "$CODE" = "200" ] || { echo "Download link is broken"; exit 1; }
