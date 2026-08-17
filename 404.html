@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Page not found — SONKA</title>
+<!-- Search Console reported "Not found (404)" on sonkagh.com. GitHub Pages was
+     serving its own bare 404, which is a dead end: somebody who followed an old
+     link to SONKA reached a page with no way back and no way to get the app.
+     This keeps the brand, says what happened, and puts the download one tap
+     away — a mistyped URL should still end in an install. -->
+<meta name="robots" content="noindex">
+<meta name="description" content="That page does not exist. Download SONKA or return to the homepage.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#1B2A4A; --navy-deep:#0d1a33; --navy-ink:#081324;
+    --gold:#F5A800; --gold-lit:#FFC24D;
+    --sand:#FFF8EC; --paper:#FAFAF8;
+    --ink:#141922; --muted:#54607A;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0; min-height:100vh;
+    font-family:'DM Sans',system-ui,sans-serif;
+    color:var(--sand); background:var(--navy-deep);
+    display:flex; align-items:center; justify-content:center;
+    padding:clamp(20px,6vw,64px);
+    text-align:center;
+  }
+  .wrap{max-width:560px; display:flex; flex-direction:column; gap:18px; align-items:center}
+  .mark{
+    width:56px;height:56px;border-radius:14px;background:var(--gold);
+    display:flex;align-items:center;justify-content:center;
+    font-family:'Playfair Display',serif;font-weight:900;font-size:26px;color:var(--navy-deep);
+  }
+  .code{
+    font-family:'DM Sans',sans-serif;font-weight:700;font-size:.78rem;
+    letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin:0;
+  }
+  h1{
+    font-family:'Playfair Display',Georgia,serif;font-weight:800;
+    font-size:clamp(1.9rem,6vw,2.7rem);line-height:1.1;letter-spacing:-.015em;
+    margin:0;text-wrap:balance;
+  }
+  p{margin:0;color:rgba(255,248,236,.78);line-height:1.6;max-width:44ch}
+  .actions{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-top:6px}
+  a.btn{
+    display:inline-block;padding:13px 24px;border-radius:10px;
+    font-weight:700;font-size:.98rem;text-decoration:none;
+    transition:transform .15s ease, background .15s ease;
+  }
+  a.primary{background:var(--gold);color:var(--navy-deep)}
+  a.primary:hover{background:var(--gold-lit);transform:translateY(-1px)}
+  a.ghost{border:1px solid rgba(255,248,236,.32);color:var(--sand)}
+  a.ghost:hover{border-color:var(--gold);color:var(--gold);transform:translateY(-1px)}
+  a:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+  .links{margin-top:14px;font-size:.85rem;color:rgba(255,248,236,.5);line-height:2}
+  .links a{color:rgba(255,248,236,.72);text-decoration:none;margin:0 8px}
+  .links a:hover{color:var(--gold)}
+  @media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="mark">S</div>
+    <p class="code">Error 404</p>
+    <h1>That page has moved on</h1>
+    <p>
+      The link you followed does not exist on sonkagh.com. It may be old, or
+      slightly mistyped. Everything else is still here.
+    </p>
+    <div class="actions">
+      <a class="btn primary" href="https://github.com/dariustieku12-pixel/sonka-releases/releases/latest/download/SONKA.apk">Download SONKA</a>
+      <a class="btn ghost" href="/">Go to the homepage</a>
+    </div>
+    <div class="links">
+      <a href="/book/">Book a truck</a> ·
+      <a href="/privacy-policy.html">Privacy</a> ·
+      <a href="/terms-of-service.html">Terms</a> ·
+      <a href="/delete-account.html">Delete account</a>
+    </div>
+  </div>
+</body>
+</html>
