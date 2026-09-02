@@ -34,7 +34,7 @@
 "applicationCategory":"TransportationApplication","operatingSystem":"Android",
 "offers":{"@type":"Offer","price":"0","priceCurrency":"GHS"},
 "author":{"@type":"Organization","name":"Tele-Port Prime Ghana Ltd","url":"https://sonkagh.com/"},
-"countriesSupported":"GH","downloadUrl":"https://github.com/dariustieku12-pixel/sonka-releases/releases/latest/download/SONKA.apk"}
+"countriesSupported":"GH","downloadUrl":"https://play.google.com/store/apps/details?id=com.teleportprime.sonka","installUrl":"https://play.google.com/store/apps/details?id=com.teleportprime.sonka"}
 </script>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -776,23 +776,32 @@ body.lite .hero-stage{transform:none!important}
          download link that needs remembering is a download link that goes
          stale. The previous one pointed at an EAS build artifact, which EAS
          prunes — it would have died silently. -->
+    <!-- Google Play leads from 2 Sep 2026, the day SONKA went live there after
+         114 days blocked.
+
+         It takes the primary slot from the direct APK for one reason that
+         matters more than preference: Play is the only route that does not make
+         Android warn the user. Every other option here ends with a screen
+         saying the file may be harmful, and a first-time user reads that as
+         "this app is unsafe" and stops. The direct download stays, because a
+         phone without Play services still needs it. -->
     <div class="stores rise" data-d="3">
-      <a class="store store-primary" href="https://github.com/dariustieku12-pixel/sonka-releases/releases/latest/download/SONKA.apk">⬇ <b>Download for Android</b></a>
+      <a class="store store-primary" href="https://play.google.com/store/apps/details?id=com.teleportprime.sonka" target="_blank" rel="noopener">▶ <b>Get it on Google Play</b></a>
       <a class="store" href="https://www.palmplaystore.com/detail/com.teleportprime.sonka?country=GH" target="_blank" rel="noopener">🌴 <b>PalmStore</b></a>
       <a class="store" href="https://appgallery.huawei.com/app/C117421289" target="_blank" rel="noopener">🟥 <b>AppGallery</b></a>
       <a class="store" href="https://apkpure.com/sonka/com.teleportprime.sonka" target="_blank" rel="noopener">⬇ <b>APKPure</b></a>
+      <a class="store" href="https://github.com/dariustieku12-pixel/sonka-releases/releases/latest/download/SONKA.apk">⬇ <b>Direct APK</b></a>
     </div>
-    <!-- Said plainly, because Android WILL warn about the file and a first-time
-         user reads that warning as "this app is unsafe" and stops. -->
+    <!-- Now scoped to the direct download, since Play does not warn. -->
     <p class="fine rise" data-d="3" style="margin-top:-4px">
-      Downloading direct? Open the file and choose <b>Allow from this source</b> when Android asks.
+      Using the direct APK? Open the file and choose <b>Allow from this source</b> when Android asks. Google Play installs without that step.
     </p>
 
     <div class="trust rise" data-d="3">
       <div class="trust-item"><span>🏛️</span><div><b>Registered in Ghana</b>Tele-Port Prime Ghana Ltd · CS014610126</div></div>
       <div class="trust-item"><span>🇬🇭</span><div><b>All 16 regions</b>Available nationwide, Accra to Tamale</div></div>
       <div class="trust-item"><span>🔒</span><div><b>Your data protected</b>Numbers shared only after booking</div></div>
-      <div class="trust-item"><span>📱</span><div><b>On 3 app stores</b>PalmStore · AppGallery · APKPure</div></div>
+      <div class="trust-item"><span>📱</span><div><b>On Google Play</b>Plus PalmStore, AppGallery and APKPure</div></div>
     </div>
     <p class="fine rise" data-d="3">Free to download · Drivers subscribe from GHS 15/month · Or <a href="https://wa.me/233209557396" style="color:var(--gold-lit);text-decoration:underline">book on WhatsApp</a></p>
 
