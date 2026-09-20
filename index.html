@@ -373,7 +373,13 @@ section{position:relative}
 .price-row{display:flex;justify-content:space-between;align-items:center;gap:12px;
   padding:13px 0;border-bottom:1px solid var(--line)}
 .price-row:last-of-type{border-bottom:none}
-.price-label{font-size:.94rem;color:var(--ink);font-weight:600;display:flex;flex-direction:column;gap:1px}
+.price-label{font-size:.94rem;color:var(--ink);font-weight:600;display:flex;align-items:center;gap:11px}
+.pl-text{display:flex;flex-direction:column;gap:1px}
+/* The pair shows both vehicles in the tier, so a driver can see which
+   class his lorry falls into without reading the small print. */
+.vm-pair{display:flex;align-items:center;gap:3px;flex:none}
+.vm-pair .vm{width:30px;height:18px}
+@media(max-width:420px){.vm-pair .vm{width:24px;height:15px}}
 .price-label small{font-size:.76rem;color:var(--muted);font-weight:400}
 .price-amount{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:800;color:var(--navy);white-space:nowrap}
 .price-amount small{font-size:.8rem;font-weight:400;color:var(--muted);font-family:'DM Sans',sans-serif}
@@ -466,6 +472,20 @@ body.lite .hero-stage{transform:none!important}
 </style>
 </head>
 <body>
+<!-- Vehicle marks. Geometry mirrors Sonka-mobile/constants/vehicleMarks.ts —
+     keep the two in step if either is redrawn. Emoji were retired because three
+     of the six were simply wrong (the keke on aboboyaa worst of all) and because
+     every phone redrew them differently. Fills are literal attributes, not CSS:
+     a <use> builds a shadow tree that stylesheets cannot reach into. -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<symbol id="vm-aboboyaa" viewBox="0 0 52 32"><path fill="#F5A800" d="M12 14h3l2-5h4l-1 5h2v3h-10z"/><path fill="#F5A800" d="M15 9h7v2h-7z"/><path fill="#F5A800" d="M22 12h24v3H25v8h21v3H22z"/><path fill="#B87A00" d="M44 12h3v14h-3z"/><circle fill="#242B3C" cx="14" cy="26" r="4"/><circle fill="#242B3C" cx="32" cy="26" r="4"/><circle fill="#242B3C" cx="43" cy="26" r="4"/></symbol>
+<symbol id="vm-motorcargo" viewBox="0 0 52 32"><path fill="#E4572E" d="M13 24l6-9h6l3 4h5v3h-7l-3-4h-2l-4 6z"/><path fill="#E4572E" d="M20 12h6v2h-6z"/><path fill="#8E2F14" d="M31 11h12v8H31z"/><circle fill="#242B3C" cx="13" cy="25" r="5"/><circle fill="#242B3C" cx="38" cy="25" r="5"/></symbol>
+<symbol id="vm-kia_truck" viewBox="0 0 52 32"><path fill="#2E86AB" d="M6 15l5-6h9v6h-3z"/><path fill="#D8EBF7" d="M12 11h6v4h-9z"/><path fill="#2E86AB" d="M6 15h14v8H6z"/><path fill="#1B5C7A" d="M20 10h24v13H20z"/><circle fill="#242B3C" cx="13" cy="25" r="4.5"/><circle fill="#242B3C" cx="36" cy="25" r="4.5"/></symbol>
+<symbol id="vm-rhino_truck" viewBox="0 0 52 32"><path fill="#7B4B94" d="M4 12l4-6h9v6h-4z"/><path fill="#D8EBF7" d="M9 8h6v4h-8z"/><path fill="#7B4B94" d="M4 12h13v11H4z"/><path fill="#54306A" d="M17 5h30v18H17z"/><circle fill="#242B3C" cx="11" cy="25" r="4.5"/><circle fill="#242B3C" cx="34" cy="25" r="4.5"/><circle fill="#242B3C" cx="43" cy="25" r="4.5"/></symbol>
+<symbol id="vm-mini_bus" viewBox="0 0 52 32"><path fill="#3A9B6E" d="M8 23V14c0-3 3-6 7-6h22c4 0 7 3 7 6v9z"/><path fill="#D8EBF7" d="M12 11h10v5H11zM25 11h9v5h-9z"/><path fill="#24694A" d="M8 20h36v3H8z"/><circle fill="#242B3C" cx="15" cy="25" r="4.5"/><circle fill="#242B3C" cx="38" cy="25" r="4.5"/></symbol>
+<symbol id="vm-trailer" viewBox="0 0 52 32"><path fill="#46526E" d="M2 12l4-6h8v6h-4z"/><path fill="#D8EBF7" d="M7 8h5v4h-7z"/><path fill="#46526E" d="M2 12h12v11H2z"/><path fill="#46526E" d="M14 17h4v3h-4z"/><path fill="#2A3349" d="M18 6h32v17H18z"/><circle fill="#242B3C" cx="8" cy="25" r="4"/><circle fill="#242B3C" cx="32" cy="25" r="4"/><circle fill="#242B3C" cx="41" cy="25" r="4"/></symbol>
+</defs></svg>
+
 
 <div class="mrail"><span id="mrail"></span></div>
 <div class="rail" aria-hidden="true">
@@ -703,15 +723,15 @@ body.lite .hero-stage{transform:none!important}
         <h3>Simple monthly subscription</h3>
         <p class="price-intro">One flat fee. No commission on any trip — every cedi you agree with the customer is yours.</p>
         <div class="price-row">
-          <span class="price-label">🛺 Lightweight<small>Aboboyaa · Motor Cargo</small></span>
+          <span class="price-label"><span class="vm-pair"><svg class="vm" viewBox="0 0 52 32"><use href="#vm-aboboyaa"></use></svg><svg class="vm" viewBox="0 0 52 32"><use href="#vm-motorcargo"></use></svg></span><span class="pl-text">Lightweight<small>Aboboyaa · Motor Cargo</small></span></span>
           <span class="price-amount">GHS 15<small>/mo</small></span>
         </div>
         <div class="price-row">
-          <span class="price-label">🚚 Light vehicles<small>Kia Truck · Mini Bus</small></span>
+          <span class="price-label"><span class="vm-pair"><svg class="vm" viewBox="0 0 52 32"><use href="#vm-kia_truck"></use></svg><svg class="vm" viewBox="0 0 52 32"><use href="#vm-mini_bus"></use></svg></span><span class="pl-text">Light vehicles<small>Kia Truck · Mini Bus</small></span></span>
           <span class="price-amount">GHS 20<small>/mo</small></span>
         </div>
         <div class="price-row">
-          <span class="price-label">🚛 Heavy &amp; trailers<small>Rhino Truck · Trailer</small></span>
+          <span class="price-label"><span class="vm-pair"><svg class="vm" viewBox="0 0 52 32"><use href="#vm-rhino_truck"></use></svg><svg class="vm" viewBox="0 0 52 32"><use href="#vm-trailer"></use></svg></span><span class="pl-text">Heavy &amp; trailers<small>Rhino Truck · Trailer</small></span></span>
           <span class="price-amount">GHS 25<small>/mo</small></span>
         </div>
         <p class="price-note">

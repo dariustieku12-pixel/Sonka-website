@@ -50,6 +50,14 @@
     font-size: 2.8mm; letter-spacing: .3px;
     border-top: 1mm solid #F5A800;
   }
+  /* White chips, because the strip is navy and the marks carry their own
+     dark tyres — on navy they would disappear. Same treatment as a map pin. */
+  .veh-marks { display: flex; justify-content: center; align-items: center;
+    gap: 2.2mm; flex-wrap: wrap; margin-top: 1.4mm; }
+  .vchip { display: inline-flex; align-items: center; gap: 1.2mm;
+    background: #fff; color: #1B2A4A; border-radius: 6mm;
+    padding: 0.9mm 2.4mm; font-size: 2.4mm; font-weight: 700; }
+  .vchip svg { width: 6mm; height: 3.7mm; display: block; }
   .veh-strip .lbl {
     font-size: 2mm; color: #F5A800; letter-spacing: 1.5px;
     text-transform: uppercase; margin-bottom: 1mm; font-weight: 700;
@@ -76,6 +84,13 @@
 </style>
 </head>
 <body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<symbol id="vm-aboboyaa" viewBox="0 0 52 32"><path fill="#F5A800" d="M12 14h3l2-5h4l-1 5h2v3h-10z"/><path fill="#F5A800" d="M15 9h7v2h-7z"/><path fill="#F5A800" d="M22 12h24v3H25v8h21v3H22z"/><path fill="#B87A00" d="M44 12h3v14h-3z"/><circle fill="#242B3C" cx="14" cy="26" r="4"/><circle fill="#242B3C" cx="32" cy="26" r="4"/><circle fill="#242B3C" cx="43" cy="26" r="4"/></symbol>
+<symbol id="vm-motorcargo" viewBox="0 0 52 32"><path fill="#E4572E" d="M13 24l6-9h6l3 4h5v3h-7l-3-4h-2l-4 6z"/><path fill="#E4572E" d="M20 12h6v2h-6z"/><path fill="#8E2F14" d="M31 11h12v8H31z"/><circle fill="#242B3C" cx="13" cy="25" r="5"/><circle fill="#242B3C" cx="38" cy="25" r="5"/></symbol>
+<symbol id="vm-kia_truck" viewBox="0 0 52 32"><path fill="#2E86AB" d="M6 15l5-6h9v6h-3z"/><path fill="#D8EBF7" d="M12 11h6v4h-9z"/><path fill="#2E86AB" d="M6 15h14v8H6z"/><path fill="#1B5C7A" d="M20 10h24v13H20z"/><circle fill="#242B3C" cx="13" cy="25" r="4.5"/><circle fill="#242B3C" cx="36" cy="25" r="4.5"/></symbol>
+<symbol id="vm-rhino_truck" viewBox="0 0 52 32"><path fill="#7B4B94" d="M4 12l4-6h9v6h-4z"/><path fill="#D8EBF7" d="M9 8h6v4h-8z"/><path fill="#7B4B94" d="M4 12h13v11H4z"/><path fill="#54306A" d="M17 5h30v18H17z"/><circle fill="#242B3C" cx="11" cy="25" r="4.5"/><circle fill="#242B3C" cx="34" cy="25" r="4.5"/><circle fill="#242B3C" cx="43" cy="25" r="4.5"/></symbol>
+</defs></svg>
+
 <div class="toolbar">
   <strong>SONKA · A5 Counter Card (148×210mm)</strong>
   <span class="muted">2 fit per A4 sheet at the print shop</span>
@@ -111,7 +126,12 @@
     </div>
     <div class="veh-strip">
       <div class="lbl">All vehicles available</div>
-      🛺 Aboboyaa · 🚐 Kia · 🚛 Rhino · 🏍️ Two Tyres
+      <div class="veh-marks">
+        <span class="vchip"><svg viewBox="0 0 52 32"><use href="#vm-aboboyaa"></use></svg>Aboboyaa</span>
+        <span class="vchip"><svg viewBox="0 0 52 32"><use href="#vm-kia_truck"></use></svg>Kia</span>
+        <span class="vchip"><svg viewBox="0 0 52 32"><use href="#vm-rhino_truck"></use></svg>Rhino</span>
+        <span class="vchip"><svg viewBox="0 0 52 32"><use href="#vm-motorcargo"></use></svg>Two Tyres</span>
+      </div>
     </div>
   </div>
 
